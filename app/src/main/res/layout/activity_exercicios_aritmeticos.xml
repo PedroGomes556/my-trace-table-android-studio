@@ -18,12 +18,52 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/button_exercicio1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
             android:onClick="IniciarExercicio"
             android:text="EXERCÍCIO 1"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_exercicio2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/background_button_color"
+            android:text="EXERCÍCIO 2"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_exercicio3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/background_button_color"
+            android:text="EXERCÍCIO 3"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_exercicio4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/background_button_color"
+            android:text="EXERCÍCIO 4"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_exercicio5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/background_button_color"
+            android:text="EXERCÍCIO 5 "
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_exercicio6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/background_button_color"
+            android:text="EXERCÍCIO 6"
             android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
