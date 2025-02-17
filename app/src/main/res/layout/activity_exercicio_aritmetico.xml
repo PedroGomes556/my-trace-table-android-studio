@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".ExercicioAritmetico">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="388dp"
+        android:layout_height="242dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/exercicio1" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button23"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/background_button_color"
+                android:text="LINHA"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button24"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/background_button_color"
+                android:text="A"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button25"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/background_button_color"
+                android:text="B"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button26"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/background_button_color"
+                android:text="C"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button178454745775417857454654654"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/background_button_color"
+                android:text="1"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextNumber19346345688"
+                android:layout_width="46dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/editTextNumber1123452855"
+                android:layout_width="57dp"
+                android:layout_height="match_parent"
+                android:background="@color/background_button_color"
+                android:clickable="false"
+                android:contextClickable="false"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="number"
+                android:linksClickable="false"
+                android:longClickable="false"
+                android:textAlignment="center"
+                android:textColorHint="#9C27B0" />
+
+            <EditText
+                android:id="@+id/editTextNumber177132432467"
+                android:layout_width="73dp"
+                android:layout_height="match_parent"
+                android:background="@color/background_button_color"
+                android:clickable="false"
+                android:contextClickable="false"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="number"
+                android:linksClickable="false"
+                android:longClickable="false"
+                android:textAlignment="center"
+                android:textColorHint="#9C27B0" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button17845474577541785745465123564654"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/background_button_color"
+                android:text="2"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextNumber196767834243588"
+                android:layout_width="46dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/editTextNumber1855dsd123123435456"
+                android:layout_width="57dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/editTextNumber17asdasdasd77"
+                android:layout_width="73dp"
+                android:layout_height="match_parent"
+                android:background="@color/background_button_color"
+                android:clickable="false"
+                android:contextClickable="false"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="number"
+                android:linksClickable="true"
+                android:longClickable="false"
+                android:textAlignment="center"
+                android:textColorHint="#9C27B0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/background_button_color"
+                android:text="3"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextNumber11"
+                android:layout_width="98dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/editTextNumber12"
+                android:layout_width="71dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/editTextNumber13"
+                android:layout_width="77dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/background_button_color"
+                android:text="4"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextNumber14874"
+                android:layout_width="91dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/editTextNumber1554742"
+                android:layout_width="78dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/editTextNumber1665"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button1784547457754178dasd57454654654"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/background_button_color"
+                android:text="5"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextNumber1988dff"
+                android:layout_width="46dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/editTextNumber185sd5"
+                android:layout_width="57dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/editTextNumberasd1777"
+                android:layout_width="73dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/interrogacao"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray" />
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/background_button_color"
+        android:text="VERIFICAR RESPOSTA"
+        android:textColorLink="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
