@@ -12,8 +12,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.w3c.dom.Text;
-
 public class ExerciciosAritmeticos extends AppCompatActivity {
 
     public String tipoExercicio = null;
@@ -31,7 +29,7 @@ public class ExerciciosAritmeticos extends AppCompatActivity {
         });
 
         tipoExercicio = getIntent().getStringExtra("tipoExercicio");
-        textTituloMenu = findViewById(R.id.text_legenda_tipo_exercicio);
+        textTituloMenu = findViewById(R.id.id_text_legenda);
         DefineTituloDoMenu();
 
     }
