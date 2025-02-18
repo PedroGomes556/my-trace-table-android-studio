@@ -2,11 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".MenuExercicio">
+    android:backgroundTint="@color/background_color"
+    tools:context=".ui.home.HomeFragment">
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -15,40 +16,43 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43">
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="match_parent"
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
-            android:onClick="OperadoresAritmeticos"
-            android:text="OPERADORES ARITMÉTICOS"
+            android:onClick="Exercicios"
+            android:text="EXERCÍCIOS"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button5"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/background_button_color"
-            android:text="ESTRUTURAS CONDICIONAIS"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
-            android:text="ESTRUTURAS DE REPETIÇÃO"
+            android:text="SOBRE"
             android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
-            android:text="LISTAS"
+            android:text="SAIR"
             android:textStyle="bold" />
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
