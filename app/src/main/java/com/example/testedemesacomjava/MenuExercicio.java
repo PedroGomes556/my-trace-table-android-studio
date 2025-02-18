@@ -10,7 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class menu_exercicios extends AppCompatActivity {
+public class MenuExercicio extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

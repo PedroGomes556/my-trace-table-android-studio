@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Exercicios(View view){
-        Intent intent = new Intent(this, menu_exercicios.class);
+        Intent intent = new Intent(this, MenuExercicio.class);
         startActivity(intent);
     }
 }

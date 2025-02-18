@@ -26,7 +26,7 @@
             android:name=".ExerciciosAritmeticos"
             android:exported="false" />
         <activity
-            android:name=".menu_exercicios"
+            android:name=".MenuExercicio"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
