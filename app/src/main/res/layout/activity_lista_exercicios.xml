@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
-            android:onClick="IniciarExercicio"
+            android:onClick="IniciarExercicio1"
             android:text="EXERCÍCIO 1"
             android:textStyle="bold" />
 
@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
+            android:onClick="IniciarExercicio2"
             android:text="EXERCÍCIO 2"
             android:textStyle="bold" />
 
@@ -39,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
+            android:onClick="IniciarExercicio3"
             android:text="EXERCÍCIO 3"
             android:textStyle="bold" />
 
@@ -47,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
+            android:onClick="IniciarExercicio4"
             android:text="EXERCÍCIO 4"
             android:textStyle="bold" />
 
@@ -55,6 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
+            android:onClick="IniciarExercicio5"
             android:text="EXERCÍCIO 5 "
             android:textStyle="bold" />
 
@@ -63,6 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
+            android:onClick="IniciarExercicio6"
             android:text="EXERCÍCIO 6"
             android:textStyle="bold" />
     </LinearLayout>

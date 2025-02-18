@@ -48,8 +48,35 @@ public class ExerciciosAritmeticos extends AppCompatActivity {
         }
     }
 
-    public void IniciarExercicio(View view){
+    public void IniciarExercicio1(View view){
         Intent intent = new Intent(this, ExercicioAritmetico.class);
+        intent.putExtra("numeroExercicio", "1");
         startActivity(intent);
     }
+    public void IniciarExercicio2(View view){
+        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        intent.putExtra("numeroExercicio", "2");
+        startActivity(intent);
+    }
+    public void IniciarExercicio3(View view){
+        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        intent.putExtra("numeroExercicio", "3");
+        startActivity(intent);
+    }
+    public void IniciarExercicio4(View view){
+        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        intent.putExtra("numeroExercicio", "4");
+        startActivity(intent);
+    }
+    public void IniciarExercicio5(View view){
+        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        intent.putExtra("numeroExercicio", "5");
+        startActivity(intent);
+    }
+    public void IniciarExercicio6(View view){
+        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        intent.putExtra("numeroExercicio", "6");
+        startActivity(intent);
+    }
+
 }

@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,6 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ExercicioAritmetico extends AppCompatActivity {
 
+    public String tipoExercicio = null;
+    public TextView textTituloMenu = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,11 @@ public class ExercicioAritmetico extends AppCompatActivity {
             return insets;
         });
 
+        //RECUPERANDO INTENT
+        tipoExercicio = getIntent().getStringExtra("numeroExercicio");
+        textTituloMenu = findViewById(R.id.id_numero_exercicio);
+        DefineNumeroExercicio();
+
         Button btnToast = findViewById(R.id.button31);
         btnToast.setOnClickListener(v -> {
             VerificaResposta();
@@ -35,6 +43,23 @@ public class ExercicioAritmetico extends AppCompatActivity {
             }
         });
     }
+
+    public void DefineNumeroExercicio(){
+        if(tipoExercicio.equals("1")){
+            textTituloMenu.setText("EXERCÍCIO 1");
+        }else if (tipoExercicio.equals("2")) {
+            textTituloMenu.setText("EXERCÍCIO 2");
+        }else if (tipoExercicio.equals("3")){
+            textTituloMenu.setText("EXERCÍCIO 3");
+        }else if(tipoExercicio.equals("4")){
+            textTituloMenu.setText("EXERCÍCIO 4");
+        }else if(tipoExercicio.equals("5")) {
+            textTituloMenu.setText("EXERCÍCIO 5");
+        }else{
+            textTituloMenu.setText("EXERCÍCIO 6");
+        }
+    }
+
 
     boolean acertouTudo = true;
 
