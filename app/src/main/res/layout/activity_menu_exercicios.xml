@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
+            android:onClick="Condicionais"
             android:text="ESTRUTURAS CONDICIONAIS"
             android:textStyle="bold" />
 
@@ -39,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
+            android:onClick="EstruturaRepeticao"
             android:text="ESTRUTURAS DE REPETIÇÃO"
             android:textStyle="bold" />
 
@@ -47,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
+            android:onClick="Listas"
             android:text="LISTAS"
             android:textStyle="bold" />
     </LinearLayout>

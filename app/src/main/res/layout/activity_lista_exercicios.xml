@@ -66,4 +66,19 @@
             android:text="EXERCÍCIO 6"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_legenda_tipo_exercicio"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/background_button_color"
+        android:gravity="center"
+        android:text="Operadores Aritméticos"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
