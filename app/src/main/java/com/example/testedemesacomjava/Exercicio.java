@@ -1,7 +1,9 @@
 package com.example.testedemesacomjava;
 
-import android.graphics.Color;
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,11 +15,24 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Exercicio extends AppCompatActivity {
 
+    EditText campo1, campo2, campo3, campo4, campo5,
+            campo6, campo7, campo8, campo9, campo10, campo11, campo12, campo13, campo14, campo15;
     private String numeroExercicio = null;
     private TextView textTituloMenu = null;
     private String tipoExercicio = null;
+    private Button buttonTentarDenovo;
+    private Button buttonRetornarMenuExercicio;
+    private Button buttonVerificarRestposta;
+    boolean acertouTudo = true;
+
+    List<String> respostaUsuario = new ArrayList<String>();
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,20 +44,63 @@ public class Exercicio extends AppCompatActivity {
             return insets;
         });
 
+        campo1 = findViewById(R.id.editTextNumber1);
+        campo2 = findViewById(R.id.editTextNumber2);
+        campo3 = findViewById(R.id.editTextNumber3);
+        campo4 = findViewById(R.id.editTextNumber4);
+        campo5 = findViewById(R.id.editTextNumber5);
+        campo6 = findViewById(R.id.editTextNumber6);
+        campo7 = findViewById(R.id.editTextNumber7);
+        campo8 = findViewById(R.id.editTextNumber8);
+        campo9 = findViewById(R.id.editTextNumber9);
+        campo10 = findViewById(R.id.editTextNumber10);
+        campo11 = findViewById(R.id.editTextNumber11);
+        campo12 = findViewById(R.id.editTextNumber12);
+        campo13 = findViewById(R.id.editTextNumber13);
+        campo15 = findViewById(R.id.editTextNumberasd15);
+
         //RECUPERANDO INTENT
         numeroExercicio = getIntent().getStringExtra("numeroExercicio");
         tipoExercicio = getIntent().getStringExtra("tipoExercicio");
         textTituloMenu = findViewById(R.id.id_numero_exercicio);
 
+        Toast.makeText(Exercicio.this, tipoExercicio, Toast.LENGTH_SHORT).show();
+
+        buttonRetornarMenuExercicio = findViewById(R.id.buttonMenuExercicios);
+        buttonRetornarMenuExercicio.setOnClickListener(v -> {
+            Intent intent = new Intent(this, MenuExercicio.class);
+            startActivity(intent);
+        });
+
+        buttonTentarDenovo = findViewById(R.id.buttonTentarNovamente);
+        buttonTentarDenovo.setOnClickListener(v -> {
+            buttonVerificarRestposta.setClickable(true);
+            buttonVerificarRestposta.setVisibility(View.VISIBLE);
+
+            buttonRetornarMenuExercicio.setVisibility(View.INVISIBLE);
+            buttonRetornarMenuExercicio.setClickable(false);
+            buttonTentarDenovo.setVisibility(View.INVISIBLE);
+            buttonTentarDenovo.setClickable(false);
+
+
+        });
+
         DefineNumeroExercicio();
 
-        Button btnToast = findViewById(R.id.button31);
-        btnToast.setOnClickListener(v -> {
+        buttonVerificarRestposta = findViewById(R.id.button31);
+        buttonVerificarRestposta.setOnClickListener(v -> {
             VerificaResposta();
             if(isAcertouTudo()){
                 Toast.makeText(Exercicio.this, "Resposta correta!", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(Exercicio.this, "Resposta incorreta, tente novamente!", Toast.LENGTH_SHORT).show();
+                buttonVerificarRestposta.setClickable(false);
+                buttonVerificarRestposta.setVisibility(View.INVISIBLE);
+
+                buttonRetornarMenuExercicio.setVisibility(View.VISIBLE);
+                buttonRetornarMenuExercicio.setClickable(true);
+                buttonTentarDenovo.setVisibility(View.VISIBLE);
+                buttonTentarDenovo.setClickable(true);
             }
         });
     }
@@ -64,78 +122,52 @@ public class Exercicio extends AppCompatActivity {
     }
 
 
-    boolean acertouTudo = true;
+    private void limparCampos(){
+        campo1.setText("");
+        //campo2.setText("");
+        //campo3.setText("");
+        campo4.setText("");
+        campo5.setText("");
+        //campo6.setText("");
+        campo7.setText("");
+        campo8.setText("");
+        campo9.setText("");
+        campo10.setText("");
+        campo11.setText("");
+        campo12.setText("");
+        campo13.setText("");
+        campo14.setText("");
+        campo15.setText("");
+    }
+
 
     public boolean isAcertouTudo(){
         return acertouTudo;
     }
 
-    public void VerificaResposta(){
-        EditText campo1 = findViewById(R.id.editTextNumber19346345688);
-        EditText campo4 = findViewById(R.id.editTextNumber196767834243588);
-        EditText campo7 = findViewById(R.id.editTextNumber11);
-        if(!campo1.getText().toString().equals("3") || !campo4.getText().toString().equals("3")
-                || !campo7.getText().toString().equals("3")){
-            acertouTudo = false;
-            campo1.setTextColor(Color.RED);
-            campo4.setTextColor(Color.RED);
-            campo7.setTextColor(Color.RED);
-        }else{
-            campo1.setTextColor(Color.GREEN);
-            campo4.setTextColor(Color.GREEN);
-            campo7.setTextColor(Color.GREEN);
+    public void VerificaResposta() {
+        respostaUsuario = Arrays.asList(campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString()
+                , campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString(),
+                campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString()
+                , campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString());
+
+        if (tipoExercicio.equals("aritmetico")) {
+            RespostasAritmetico respostasAritmetico = new RespostasAritmetico();
+            if (numeroExercicio.equals("1")) {
+                List<Integer> respostaExercicio1 = respostasAritmetico.getExercicio1();
+                for (int i = 0; i < respostaUsuario.size(); i++) {
+                    String respostaStr = respostaUsuario.get(i);
+                    Integer respostaInt = respostaExercicio1.get(i);
+
+                    // Compara convertendo a String para Integer
+                    if (respostaStr.equals(respostaInt.toString())) {
+
+                    } else {
+                        acertouTudo = false;
+                    }
+                }
+            }
+
         }
-
-        EditText campo5 = findViewById(R.id.editTextNumber1855dsd123123435456);
-        EditText campo8 = findViewById(R.id.editTextNumber12);
-        EditText campo11 = findViewById(R.id.editTextNumber1554742);
-        EditText campo14 = findViewById(R.id.editTextNumber185sd5);
-        if(!campo5.getText().toString().equals("27") || !campo8.getText().toString().equals("27")
-                    || !campo11.getText().toString().equals("27") || !campo14.getText().toString().equals("27")){
-            acertouTudo = false;
-            campo5.setTextColor(Color.RED);
-            campo8.setTextColor(Color.RED);
-            campo11.setTextColor(Color.RED);
-            campo14.setTextColor(Color.RED);
-        }else{
-            campo5.setTextColor(Color.GREEN);
-            campo8.setTextColor(Color.GREEN);
-            campo11.setTextColor(Color.GREEN);
-            campo14.setTextColor(Color.GREEN);
-        }
-
-        EditText campo9 = findViewById(R.id.editTextNumber13);
-        EditText campo12 = findViewById(R.id.editTextNumber1665);
-        if(!campo9.getText().toString().equals("10") || !campo12.getText().toString().equals("10")){
-            acertouTudo = false;
-            campo9.setTextColor(Color.RED);
-            campo12.setTextColor(Color.RED);
-        }else{
-            campo9.setTextColor(Color.GREEN);
-            campo12.setTextColor(Color.GREEN);
-        }
-
-        EditText campo10 = findViewById(R.id.editTextNumber14874);
-        EditText campo13 = findViewById(R.id.editTextNumber1988dff);
-        if(!campo10.getText().toString().equals("1") || (!campo13.getText().toString().equals("1"))){
-            acertouTudo = false;
-            campo10.setTextColor(Color.RED);
-            campo13.setTextColor(Color.RED);
-        }else{
-            campo10.setTextColor(Color.GREEN);
-            campo13.setTextColor(Color.GREEN);
-        }
-
-        EditText campo16 = findViewById(R.id.editTextNumberasd1777);
-        if(!campo16.getText().toString().equals("17")){
-            acertouTudo = false;
-            campo16.setTextColor(Color.RED);
-        }else{
-            campo16.setTextColor(Color.GREEN);
-        }
-
-
-
     }
-
 }
