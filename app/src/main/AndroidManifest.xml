@@ -13,10 +13,10 @@
         android:theme="@style/Theme.TesteDeMesaComJava"
         tools:targetApi="31" >
         <activity
-            android:name=".ExercicioAritmetico"
+            android:name=".Exercicio"
             android:exported="false" />
         <activity
-            android:name=".ExerciciosAritmeticos"
+            android:name=".ListaExercicio"
             android:exported="false" />
         <activity
             android:name=".MenuExercicio"

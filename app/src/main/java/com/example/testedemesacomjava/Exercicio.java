@@ -13,15 +13,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ExercicioAritmetico extends AppCompatActivity {
+public class Exercicio extends AppCompatActivity {
 
-    public String tipoExercicio = null;
-    public TextView textTituloMenu = null;
+    private String numeroExercicio = null;
+    private TextView textTituloMenu = null;
+    private String tipoExercicio = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_exercicio_aritmetico);
+        setContentView(R.layout.activity_tela_exercicio);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -29,31 +30,33 @@ public class ExercicioAritmetico extends AppCompatActivity {
         });
 
         //RECUPERANDO INTENT
-        tipoExercicio = getIntent().getStringExtra("numeroExercicio");
+        numeroExercicio = getIntent().getStringExtra("numeroExercicio");
+        tipoExercicio = getIntent().getStringExtra("tipoExercicio");
         textTituloMenu = findViewById(R.id.id_numero_exercicio);
+
         DefineNumeroExercicio();
 
         Button btnToast = findViewById(R.id.button31);
         btnToast.setOnClickListener(v -> {
             VerificaResposta();
             if(isAcertouTudo()){
-                Toast.makeText(ExercicioAritmetico.this, "Resposta correta!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Exercicio.this, "Resposta correta!", Toast.LENGTH_SHORT).show();
             }else{
-                Toast.makeText(ExercicioAritmetico.this, "Resposta incorreta, tente novamente!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Exercicio.this, "Resposta incorreta, tente novamente!", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     public void DefineNumeroExercicio(){
-        if(tipoExercicio.equals("1")){
+        if(numeroExercicio.equals("1")){
             textTituloMenu.setText("EXERCÍCIO 1");
-        }else if (tipoExercicio.equals("2")) {
+        }else if (numeroExercicio.equals("2")) {
             textTituloMenu.setText("EXERCÍCIO 2");
-        }else if (tipoExercicio.equals("3")){
+        }else if (numeroExercicio.equals("3")){
             textTituloMenu.setText("EXERCÍCIO 3");
-        }else if(tipoExercicio.equals("4")){
+        }else if(numeroExercicio.equals("4")){
             textTituloMenu.setText("EXERCÍCIO 4");
-        }else if(tipoExercicio.equals("5")) {
+        }else if(numeroExercicio.equals("5")) {
             textTituloMenu.setText("EXERCÍCIO 5");
         }else{
             textTituloMenu.setText("EXERCÍCIO 6");

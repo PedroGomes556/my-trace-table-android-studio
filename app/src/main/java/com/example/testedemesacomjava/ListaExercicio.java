@@ -12,7 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ExerciciosAritmeticos extends AppCompatActivity {
+public class ListaExercicio extends AppCompatActivity {
 
     public String tipoExercicio = null;
     public TextView textTituloMenu = null;
@@ -47,33 +47,39 @@ public class ExerciciosAritmeticos extends AppCompatActivity {
     }
 
     public void IniciarExercicio1(View view){
-        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        Intent intent = new Intent(this, Exercicio.class);
         intent.putExtra("numeroExercicio", "1");
+        intent.putExtra("tipoExercicio", tipoExercicio);
         startActivity(intent);
     }
     public void IniciarExercicio2(View view){
-        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        Intent intent = new Intent(this, Exercicio.class);
         intent.putExtra("numeroExercicio", "2");
+        intent.putExtra("tipoExercicio", tipoExercicio);
         startActivity(intent);
     }
     public void IniciarExercicio3(View view){
-        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        Intent intent = new Intent(this, Exercicio.class);
         intent.putExtra("numeroExercicio", "3");
+        intent.putExtra("tipoExercicio", tipoExercicio);
         startActivity(intent);
     }
     public void IniciarExercicio4(View view){
-        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        Intent intent = new Intent(this, Exercicio.class);
         intent.putExtra("numeroExercicio", "4");
+        intent.putExtra("tipoExercicio", tipoExercicio);
         startActivity(intent);
     }
     public void IniciarExercicio5(View view){
-        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        Intent intent = new Intent(this, Exercicio.class);
         intent.putExtra("numeroExercicio", "5");
+        intent.putExtra("tipoExercicio", tipoExercicio);
         startActivity(intent);
     }
     public void IniciarExercicio6(View view){
-        Intent intent = new Intent(this, ExercicioAritmetico.class);
+        Intent intent = new Intent(this, Exercicio.class);
         intent.putExtra("numeroExercicio", "6");
+        intent.putExtra("tipoExercicio", tipoExercicio);
         startActivity(intent);
     }
 
