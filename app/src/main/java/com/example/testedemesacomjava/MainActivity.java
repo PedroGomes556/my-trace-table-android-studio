@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+
+import com.example.testedemesacomjava.ui.slideshow.SlideshowFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -45,6 +49,11 @@ private ActivityMainBinding binding;
         Intent intent = new Intent(this, MenuExercicio.class);
         startActivity(intent);
     }
+
+    public void Sobre(View view){
+
+    }
+
 
 
     @Override

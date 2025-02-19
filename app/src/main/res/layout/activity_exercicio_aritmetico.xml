@@ -68,6 +68,8 @@
         android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/background_button_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -119,7 +121,7 @@
 
             <Button
                 android:id="@+id/button178454745775417857454654654"
-                android:layout_width="wrap_content"
+                android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/background_button_color"
                 android:text="1"

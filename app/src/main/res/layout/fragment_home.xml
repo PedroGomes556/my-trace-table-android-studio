@@ -38,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
+            android:onClick="Sobre"
             android:text="SOBRE"
             android:textStyle="bold" />
 
@@ -46,7 +47,7 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonSair"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
