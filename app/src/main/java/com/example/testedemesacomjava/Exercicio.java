@@ -44,7 +44,7 @@ public class Exercicio extends AppCompatActivity {
             return insets;
         });
 
-        campo1 = findViewById(R.id.editTextNumber1);
+        /*campo1 = findViewById(R.id.editTextNumber1);
         campo2 = findViewById(R.id.editTextNumber2);
         campo3 = findViewById(R.id.editTextNumber3);
         campo4 = findViewById(R.id.editTextNumber4);
@@ -57,7 +57,7 @@ public class Exercicio extends AppCompatActivity {
         campo11 = findViewById(R.id.editTextNumber11);
         campo12 = findViewById(R.id.editTextNumber12);
         campo13 = findViewById(R.id.editTextNumber13);
-        campo15 = findViewById(R.id.editTextNumberasd15);
+        campo15 = findViewById(R.id.editTextNumberasd15);*/
 
         //RECUPERANDO INTENT
         numeroExercicio = getIntent().getStringExtra("numeroExercicio");
@@ -146,28 +146,17 @@ public class Exercicio extends AppCompatActivity {
     }
 
     public void VerificaResposta() {
-        respostaUsuario = Arrays.asList(campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString()
-                , campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString(),
-                campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString()
-                , campo1.getText().toString(), campo1.getText().toString(), campo1.getText().toString());
+        respostaUsuario = Arrays.asList(campo1.getText().toString(), campo2.getText().toString(), campo3.getText().toString(), campo4.getText().toString()
+                , campo5.getText().toString(), campo6.getText().toString(), campo7.getText().toString(), campo8.getText().toString(),
+                campo9.getText().toString(), campo10.getText().toString(), campo11.getText().toString(), campo12.getText().toString()
+                , campo13.getText().toString(), campo14.getText().toString(), campo15.getText().toString());
 
+        Toast.makeText(Exercicio.this, respostaUsuario.toString(), Toast.LENGTH_SHORT).show();
         if (tipoExercicio.equals("aritmetico")) {
             RespostasAritmetico respostasAritmetico = new RespostasAritmetico();
             if (numeroExercicio.equals("1")) {
-                List<Integer> respostaExercicio1 = respostasAritmetico.getExercicio1();
-                for (int i = 0; i < respostaUsuario.size(); i++) {
-                    String respostaStr = respostaUsuario.get(i);
-                    Integer respostaInt = respostaExercicio1.get(i);
 
-                    // Compara convertendo a String para Integer
-                    if (respostaStr.equals(respostaInt.toString())) {
-
-                    } else {
-                        acertouTudo = false;
-                    }
-                }
             }
-
         }
     }
 }
