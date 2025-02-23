@@ -44,20 +44,21 @@ public class Exercicio extends AppCompatActivity {
             return insets;
         });
 
-        /*campo1 = findViewById(R.id.editTextNumber1);
+        campo1 = findViewById(R.id.editTextNumber1);
         campo2 = findViewById(R.id.editTextNumber2);
         campo3 = findViewById(R.id.editTextNumber3);
         campo4 = findViewById(R.id.editTextNumber4);
         campo5 = findViewById(R.id.editTextNumber5);
         campo6 = findViewById(R.id.editTextNumber6);
-        campo7 = findViewById(R.id.editTextNumber7);
+        campo7 = findViewById(R.id.editTextNumber11);
         campo8 = findViewById(R.id.editTextNumber8);
         campo9 = findViewById(R.id.editTextNumber9);
         campo10 = findViewById(R.id.editTextNumber10);
         campo11 = findViewById(R.id.editTextNumber11);
         campo12 = findViewById(R.id.editTextNumber12);
         campo13 = findViewById(R.id.editTextNumber13);
-        campo15 = findViewById(R.id.editTextNumberasd15);*/
+        campo15 = findViewById(R.id.editTextNumber14);
+        campo15 = findViewById(R.id.editTextNumber15);
 
         //RECUPERANDO INTENT
         numeroExercicio = getIntent().getStringExtra("numeroExercicio");
