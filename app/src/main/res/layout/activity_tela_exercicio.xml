@@ -197,12 +197,13 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber2"
@@ -211,12 +212,13 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber3"
@@ -224,12 +226,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -260,12 +263,13 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber5"
@@ -274,12 +278,13 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber6"
@@ -287,12 +292,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -323,12 +329,13 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber8"
@@ -337,12 +344,13 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber9"
@@ -350,12 +358,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -386,13 +395,14 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:singleLine="true"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber11"
@@ -401,12 +411,13 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber12"
@@ -414,12 +425,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -450,12 +462,12 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/editTextNumber14"
@@ -464,13 +476,14 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:singleLine="true"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber15"
@@ -478,12 +491,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_arredondado"
+                android:background="@drawable/shape_arredondado_branco"
                 android:fontFamily="@font/poppins"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 

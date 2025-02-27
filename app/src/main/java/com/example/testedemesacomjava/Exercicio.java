@@ -2,6 +2,7 @@ package com.example.testedemesacomjava;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,12 +12,14 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Exercicio extends AppCompatActivity {
@@ -33,6 +36,7 @@ public class Exercicio extends AppCompatActivity {
 
     List<String> respostaUsuario = new ArrayList<>();
 
+    List<EditText> campos = new ArrayList<>();
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -45,6 +49,7 @@ public class Exercicio extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
 
         campo1 = findViewById(R.id.editTextNumber1);
         campo2 = findViewById(R.id.editTextNumber2);
@@ -61,6 +66,7 @@ public class Exercicio extends AppCompatActivity {
         campo13 = findViewById(R.id.editTextNumber13);
         campo14 = findViewById(R.id.editTextNumber14);
         campo15 = findViewById(R.id.editTextNumber15);
+
 
         //RECUPERANDO INTENT
         numeroExercicio = getIntent().getStringExtra("numeroExercicio");
@@ -85,8 +91,6 @@ public class Exercicio extends AppCompatActivity {
             buttonRetornarMenuExercicio.setClickable(false);
             buttonTentarDenovo.setVisibility(View.INVISIBLE);
             buttonTentarDenovo.setClickable(false);
-
-
         });
 
         DefineNumeroExercicio();
@@ -95,7 +99,7 @@ public class Exercicio extends AppCompatActivity {
         buttonVerificarRestposta.setOnClickListener(v -> {
             VerificaResposta();
             if(isAcertouTudo()){
-                Toast.makeText(Exercicio.this, "Resposta correta!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Exercicio.this, "Resposta correta!", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(Exercicio.this, "Resposta incorreta, tente novamente!", Toast.LENGTH_SHORT).show();
                 buttonVerificarRestposta.setClickable(false);
@@ -125,7 +129,6 @@ public class Exercicio extends AppCompatActivity {
         }
     }
 
-
     private void limparCampos(){
         campo1.setText("");
         //campo2.setText("");
@@ -143,7 +146,6 @@ public class Exercicio extends AppCompatActivity {
         campo14.setText("");
         campo15.setText("");
     }
-
 
     public boolean isAcertouTudo(){
         return acertouTudo;
@@ -168,17 +170,39 @@ public class Exercicio extends AppCompatActivity {
     }
 
     public void VerificaResposta() {
+
         RespostasAritmetico respostasAritmetico = new RespostasAritmetico();
         getResposta();
-        respostasAritmetico.getExercicio1();
+        campos = Arrays.asList(
+                campo1, campo2, campo3, campo4, campo5,
+                campo6, campo7, campo8, campo9, campo10,
+                campo11, campo12, campo13, campo14, campo15
+        );
 
-        Toast.makeText(Exercicio.this, respostaUsuario.toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(Exercicio.this, respostaUsuario.toString(), Toast.LENGTH_SHORT).show();
         if (tipoExercicio.equals("aritmetico")) {
             if (numeroExercicio.equals("1")) {
-                Toast.makeText(Exercicio.this, "ENTROUUU", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Exercicio.this, "ENTROUUU", Toast.LENGTH_SHORT).show();
+
+                for (int i = 0; i < respostasAritmetico.getExercicio1().size(); i++) {
+                    String respostaCorreta = respostasAritmetico.getExercicio1().get(i).toString();
+                    String respostaDoUsuario = respostaUsuario.get(i);
+
+                    if (respostaCorreta.equals(respostaDoUsuario)) {
+                        Toast.makeText(Exercicio.this, "CERTO", Toast.LENGTH_SHORT).show();
+                        campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_verde_claro));
+                        campos.get(i).setFocusable(false);
+                        campos.get(i).setTextColor(Color.parseColor("#006400"));
+                    } else {
+                        Toast.makeText(Exercicio.this, "ERRADO", Toast.LENGTH_SHORT).show();
+                        campos.get(i).setFocusable(false);
+                        campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_vermelho));
+                        campos.get(i).setTextColor(Color.RED);
+                    }
+                }
+
             }
         }
     }
-
 
 }
