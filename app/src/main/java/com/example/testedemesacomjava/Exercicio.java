@@ -31,7 +31,9 @@ public class Exercicio extends AppCompatActivity {
     private Button buttonVerificarRestposta;
     boolean acertouTudo = true;
 
-    List<String> respostaUsuario = new ArrayList<String>();
+    List<String> respostaUsuario = new ArrayList<>();
+
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +52,14 @@ public class Exercicio extends AppCompatActivity {
         campo4 = findViewById(R.id.editTextNumber4);
         campo5 = findViewById(R.id.editTextNumber5);
         campo6 = findViewById(R.id.editTextNumber6);
-        campo7 = findViewById(R.id.editTextNumber11);
+        campo7 = findViewById(R.id.editTextNumber7);
         campo8 = findViewById(R.id.editTextNumber8);
         campo9 = findViewById(R.id.editTextNumber9);
         campo10 = findViewById(R.id.editTextNumber10);
         campo11 = findViewById(R.id.editTextNumber11);
         campo12 = findViewById(R.id.editTextNumber12);
         campo13 = findViewById(R.id.editTextNumber13);
-        campo15 = findViewById(R.id.editTextNumber14);
+        campo14 = findViewById(R.id.editTextNumber14);
         campo15 = findViewById(R.id.editTextNumber15);
 
         //RECUPERANDO INTENT
@@ -66,6 +68,7 @@ public class Exercicio extends AppCompatActivity {
         textTituloMenu = findViewById(R.id.id_numero_exercicio);
 
         Toast.makeText(Exercicio.this, tipoExercicio, Toast.LENGTH_SHORT).show();
+        Toast.makeText(Exercicio.this, numeroExercicio, Toast.LENGTH_SHORT).show();
 
         buttonRetornarMenuExercicio = findViewById(R.id.buttonMenuExercicios);
         buttonRetornarMenuExercicio.setOnClickListener(v -> {
@@ -146,18 +149,36 @@ public class Exercicio extends AppCompatActivity {
         return acertouTudo;
     }
 
+    public void getResposta(){
+        respostaUsuario.add(0, campo1.getText().toString());
+        respostaUsuario.add(1, campo2.getText().toString());
+        respostaUsuario.add(2, campo3.getText().toString());
+        respostaUsuario.add(3, campo4.getText().toString());
+        respostaUsuario.add(4, campo5.getText().toString());
+        respostaUsuario.add(5, campo6.getText().toString());
+        respostaUsuario.add(6, campo7.getText().toString());
+        respostaUsuario.add(7, campo8.getText().toString());
+        respostaUsuario.add(8, campo9.getText().toString());
+        respostaUsuario.add(9, campo10.getText().toString());
+        respostaUsuario.add(10, campo11.getText().toString());
+        respostaUsuario.add(11, campo12.getText().toString());
+        respostaUsuario.add(12, campo13.getText().toString());
+        respostaUsuario.add(13, campo14.getText().toString());
+        respostaUsuario.add(14, campo15.getText().toString());
+    }
+
     public void VerificaResposta() {
-        respostaUsuario = Arrays.asList(campo1.getText().toString(), campo2.getText().toString(), campo3.getText().toString(), campo4.getText().toString()
-                , campo5.getText().toString(), campo6.getText().toString(), campo7.getText().toString(), campo8.getText().toString(),
-                campo9.getText().toString(), campo10.getText().toString(), campo11.getText().toString(), campo12.getText().toString()
-                , campo13.getText().toString(), campo14.getText().toString(), campo15.getText().toString());
+        RespostasAritmetico respostasAritmetico = new RespostasAritmetico();
+        getResposta();
+        respostasAritmetico.getExercicio1();
 
         Toast.makeText(Exercicio.this, respostaUsuario.toString(), Toast.LENGTH_SHORT).show();
         if (tipoExercicio.equals("aritmetico")) {
-            RespostasAritmetico respostasAritmetico = new RespostasAritmetico();
             if (numeroExercicio.equals("1")) {
-
+                Toast.makeText(Exercicio.this, "ENTROUUU", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
+
 }

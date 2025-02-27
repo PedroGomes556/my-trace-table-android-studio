@@ -40,7 +40,7 @@ public class MenuExercicio extends AppCompatActivity {
 
     public void OperadoresAritmeticos(View view){
         Intent intent = new Intent(this, ListaExercicio.class);
-        intent.putExtra("tipoExercicio", "aritimetico");
+        intent.putExtra("tipoExercicio", "aritmetico");
         startActivity(intent);
     }
 

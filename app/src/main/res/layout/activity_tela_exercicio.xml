@@ -403,6 +403,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/shape_arredondado"
                 android:fontFamily="@font/poppins"
+                android:inputType="number"
                 android:padding="8dp"
                 android:textAlignment="center"
                 android:textColor="@color/white" />
