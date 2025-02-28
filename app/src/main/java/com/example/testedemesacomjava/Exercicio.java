@@ -1,9 +1,13 @@
 package com.example.testedemesacomjava;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,6 +42,7 @@ public class Exercicio extends AppCompatActivity {
 
     List<EditText> campos = new ArrayList<>();
 
+    RespostasAritmetico respostasAritmetico = new RespostasAritmetico();
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +71,12 @@ public class Exercicio extends AppCompatActivity {
         campo13 = findViewById(R.id.editTextNumber13);
         campo14 = findViewById(R.id.editTextNumber14);
         campo15 = findViewById(R.id.editTextNumber15);
+
+        campos = Arrays.asList(
+                campo1, campo2, campo3, campo4, campo5,
+                campo6, campo7, campo8, campo9, campo10,
+                campo11, campo12, campo13, campo14, campo15
+        );
 
 
         //RECUPERANDO INTENT
@@ -113,6 +124,20 @@ public class Exercicio extends AppCompatActivity {
                 buttonTentarDenovo.setClickable(true);
             }
         });
+
+
+        bloqueaCampos();
+    }
+
+    public void bloqueaCampos(){
+        //Indica que o campo deve ficar bloqueado, pois a variável não existe
+        for (int i = 0; i < respostasAritmetico.getExercicio1().size(); i++) {
+            if (respostasAritmetico.getExercicio1().get(i).equals("*")){
+                campos.get(i).setFocusable(false);
+                campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado));
+            }
+
+        }
     }
 
     public void DefineNumeroExercicio(){
@@ -131,12 +156,16 @@ public class Exercicio extends AppCompatActivity {
         }
     }
 
-    private void limparCampos(){
+    public void limparCampos(){
         for (int i = 0; i < campos.size(); i++){
-            campos.get(i).setText("");
-            campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_branco));
-            campos.get(i).setFocusable(true);
-            campos.get(i).setTextColor(Color.BLACK);
+            //Limpar apenas os campos que não estejam bloqueados
+            if (!respostasAritmetico.getExercicio1().get(i).equals("*")){
+                campos.get(i).setFocusable(true);
+                campos.get(i).setFocusableInTouchMode(true);
+                campos.get(i).setText("");
+                campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_branco));
+                campos.get(i).setTextColor(Color.BLACK);
+            }
         }
     }
 
@@ -164,7 +193,7 @@ public class Exercicio extends AppCompatActivity {
 
     public void VerificaResposta() {
 
-        RespostasAritmetico respostasAritmetico = new RespostasAritmetico();
+
         getResposta();
         campos = Arrays.asList(
                 campo1, campo2, campo3, campo4, campo5,
@@ -181,17 +210,27 @@ public class Exercicio extends AppCompatActivity {
                     String respostaCorreta = respostasAritmetico.getExercicio1().get(i).toString();
                     String respostaDoUsuario = respostaUsuario.get(i);
 
-                    if (respostaCorreta.equals(respostaDoUsuario)) {
+                    if (respostaCorreta.equals(respostaDoUsuario) && !respostasAritmetico.getExercicio1().get(i).equals("*")) {
                         Toast.makeText(Exercicio.this, "CERTO", Toast.LENGTH_SHORT).show();
                         campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_verde_claro));
                         campos.get(i).setFocusable(false);
                         campos.get(i).setTextColor(Color.parseColor("#006400"));
-                    } else {
+                    } else if (!respostaCorreta.equals(respostaDoUsuario) && !respostasAritmetico.getExercicio1().get(i).equals("*")){
                         acertouTudo = false;
                         Toast.makeText(Exercicio.this, "ERRADO", Toast.LENGTH_SHORT).show();
                         campos.get(i).setFocusable(false);
                         campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_vermelho));
                         campos.get(i).setTextColor(Color.RED);
+                        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            VibrationEffect effect = VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE);
+                            vibrator.vibrate(effect);
+                        } else {
+                            vibrator.vibrate(500);
+                        }
+
+
                     }
                 }
 
