@@ -91,6 +91,8 @@ public class Exercicio extends AppCompatActivity {
             buttonRetornarMenuExercicio.setClickable(false);
             buttonTentarDenovo.setVisibility(View.INVISIBLE);
             buttonTentarDenovo.setClickable(false);
+
+            limparCampos();
         });
 
         DefineNumeroExercicio();
@@ -99,7 +101,7 @@ public class Exercicio extends AppCompatActivity {
         buttonVerificarRestposta.setOnClickListener(v -> {
             VerificaResposta();
             if(isAcertouTudo()){
-                //Toast.makeText(Exercicio.this, "Resposta correta!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Exercicio.this, "Resposta correta!", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(Exercicio.this, "Resposta incorreta, tente novamente!", Toast.LENGTH_SHORT).show();
                 buttonVerificarRestposta.setClickable(false);
@@ -130,21 +132,12 @@ public class Exercicio extends AppCompatActivity {
     }
 
     private void limparCampos(){
-        campo1.setText("");
-        //campo2.setText("");
-        //campo3.setText("");
-        campo4.setText("");
-        campo5.setText("");
-        //campo6.setText("");
-        campo7.setText("");
-        campo8.setText("");
-        campo9.setText("");
-        campo10.setText("");
-        campo11.setText("");
-        campo12.setText("");
-        campo13.setText("");
-        campo14.setText("");
-        campo15.setText("");
+        for (int i = 0; i < campos.size(); i++){
+            campos.get(i).setText("");
+            campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_branco));
+            campos.get(i).setFocusable(true);
+            campos.get(i).setTextColor(Color.BLACK);
+        }
     }
 
     public boolean isAcertouTudo(){
@@ -194,6 +187,7 @@ public class Exercicio extends AppCompatActivity {
                         campos.get(i).setFocusable(false);
                         campos.get(i).setTextColor(Color.parseColor("#006400"));
                     } else {
+                        acertouTudo = false;
                         Toast.makeText(Exercicio.this, "ERRADO", Toast.LENGTH_SHORT).show();
                         campos.get(i).setFocusable(false);
                         campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_vermelho));
