@@ -211,13 +211,11 @@ public class Exercicio extends AppCompatActivity {
                     String respostaDoUsuario = respostaUsuario.get(i);
 
                     if (respostaCorreta.equals(respostaDoUsuario) && !respostasAritmetico.getExercicio1().get(i).equals("*")) {
-                        Toast.makeText(Exercicio.this, "CERTO", Toast.LENGTH_SHORT).show();
                         campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_verde_claro));
                         campos.get(i).setFocusable(false);
                         campos.get(i).setTextColor(Color.parseColor("#006400"));
                     } else if (!respostaCorreta.equals(respostaDoUsuario) && !respostasAritmetico.getExercicio1().get(i).equals("*")){
                         acertouTudo = false;
-                        Toast.makeText(Exercicio.this, "ERRADO", Toast.LENGTH_SHORT).show();
                         campos.get(i).setFocusable(false);
                         campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_vermelho));
                         campos.get(i).setTextColor(Color.RED);

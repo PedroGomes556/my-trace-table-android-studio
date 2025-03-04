@@ -16,8 +16,9 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Exercícios</string>
-    <string name="menu_gallery">Estatísticas</string>
+    <string name="menu_gallery">Ajuda</string>
     <string name="menu_slideshow">Sobre</string>
+
 
 
     <string name="descricao_do_projeto">
@@ -25,5 +26,11 @@
         Pedro Gomes, do curso de Licenciatua em Ciências da Computação. Ela foi elaborada
         com base no TCC do aluno Diego Tavares, visando desenvolvedor uma versão mobile do
         My Trace Table.
+    </string>
+
+    <string name="descricao_ajuda">
+        O objetivo da aplicação é mostrar o valor das variáveis de acordo com cada linha.
+        Para isso, basta realizar as operações e ir preenchendo os valores correspondentes das
+        campos.
     </string>
 </resources>

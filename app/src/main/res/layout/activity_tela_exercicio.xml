@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonMenuExercicios"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">>
@@ -107,7 +107,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="3dp"
             android:orientation="horizontal">
 
             <EditText
@@ -173,7 +173,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="3dp"
             android:orientation="horizontal">
 
             <EditText
@@ -239,7 +239,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="3dp"
             android:orientation="horizontal">
 
             <EditText
@@ -305,7 +305,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="3dp"
             android:orientation="horizontal">
 
             <EditText
@@ -371,7 +371,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="3dp"
             android:orientation="horizontal">
 
             <EditText
@@ -518,7 +518,7 @@
         android:id="@+id/button31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/background_button_color"
         android:text="VERIFICAR RESPOSTA"
         android:textColorLink="#4CAF50"
@@ -526,34 +526,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/buttonMenuExercicios"
+    <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="70dp"
-        android:backgroundTint="@color/background_button_color"
-        android:clickable="false"
-        android:text="EXERCÍCIOS"
-        android:textColorLink="@color/background_button_color"
-        android:textStyle="bold"
-        android:visibility="invisible"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/button31"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/buttonTentarNovamente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:backgroundTint="@color/background_button_color"
-        android:clickable="false"
-        android:text="DENOVO"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/button31"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        tools:ignore="UnknownId" />
+        <Button
+            android:id="@+id/buttonMenuExercicios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="70dp"
+            android:backgroundTint="@color/background_button_color"
+            android:clickable="false"
+            android:text="EXERCÍCIOS"
+            android:textColorLink="@color/background_button_color"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/buttonTentarNovamente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/background_button_color"
+            android:clickable="false"
+            android:text="DENOVO"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            tools:ignore="UnknownId" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
