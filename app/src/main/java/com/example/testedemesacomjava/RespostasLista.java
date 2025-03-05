@@ -14,7 +14,7 @@ public class RespostasLista {
 
     //POPULA AS RESPOSTAS. QUANDO TIVER UM "*" SIGNIFICA QUE A VARIÁVEL NÃO EXISTE NAQUELA POSIÇÃO
     private void populaRespostas(){
-
+        exercicio1.addAll(Arrays.asList("0", "*", "*", "17", "18", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*"));
     }
 
     public List getExercicio1() {
