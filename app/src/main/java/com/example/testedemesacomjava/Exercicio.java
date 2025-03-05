@@ -11,6 +11,7 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,8 @@ public class Exercicio extends AppCompatActivity {
     private Button buttonRetornarMenuExercicio;
     private Button buttonVerificarRestposta;
     boolean acertouTudo = true;
+
+    private ImageView imagemExercicio;
 
     List<String> respostaUsuario = new ArrayList<>();
 
@@ -89,6 +92,8 @@ public class Exercicio extends AppCompatActivity {
 
         Toast.makeText(Exercicio.this, tipoExercicio, Toast.LENGTH_SHORT).show();
         Toast.makeText(Exercicio.this, numeroExercicio, Toast.LENGTH_SHORT).show();
+
+        imagemExercicio = findViewById(R.id.imageView_Exercicio);
 
         buttonRetornarMenuExercicio = findViewById(R.id.buttonMenuExercicios);
         buttonRetornarMenuExercicio.setOnClickListener(v -> {
@@ -145,22 +150,28 @@ public class Exercicio extends AppCompatActivity {
 
         if (tipoExercicio.equals("aritmetico")) {
             if(numeroExercicio.equals("1")){
+                imagemExercicio.setImageResource(R.drawable.aritmetico_exercicio1);
                 bloqueaCampos(respostasAritmetico.getExercicio1());
                 limparCampos(respostasAritmetico.getExercicio1());
             }else if(numeroExercicio.equals("2")){
+                imagemExercicio.setImageResource(R.drawable.aritmetico_exercicio2);
                 bloqueaCampos(respostasAritmetico.getExercicio2());
                 limparCampos(respostasAritmetico.getExercicio2());
             }else {
+                imagemExercicio.setImageResource(R.drawable.aritmetico_exercicio3);
                 bloqueaCampos(respostasAritmetico.getExercicio3());
                 limparCampos(respostasAritmetico.getExercicio3());
             }
         }else if (tipoExercicio.equals("condicional")) {
+            imagemExercicio.setImageResource(R.drawable.condicional_exercicio1);
             bloqueaCampos(respostasCondicionais.getExercicio1());
             limparCampos(respostasCondicionais.getExercicio1());
         }else if (tipoExercicio.equals("repeticao")) {
+            imagemExercicio.setImageResource(R.drawable.estrutura_de_repeticao_exercicio1);
             bloqueaCampos(respostasEstruturaDeRepeticao.getExercicio1());
             limparCampos(respostasEstruturaDeRepeticao.getExercicio1());
         }else{
+            imagemExercicio.setImageResource(R.drawable.lista_exercicio1);
             bloqueaCampos(respostasLista.getExercicio1());
             limparCampos(respostasLista.getExercicio1());
         }

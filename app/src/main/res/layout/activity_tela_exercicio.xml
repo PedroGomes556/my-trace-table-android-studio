@@ -81,10 +81,10 @@
             android:textSize="5sp" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView_Exercicio"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/exercicio1" />
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/aritmetico_exercicio1" />
 
         <TextView
             android:id="@+id/textView5"
