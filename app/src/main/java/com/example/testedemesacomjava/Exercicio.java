@@ -105,6 +105,7 @@ public class Exercicio extends AppCompatActivity {
             buttonRetornarMenuExercicio.setClickable(false);
             buttonTentarDenovo.setVisibility(View.INVISIBLE);
             buttonTentarDenovo.setClickable(false);
+            
 
             if (tipoExercicio.equals("aritmetico")) {
                 if(numeroExercicio.equals("1")){

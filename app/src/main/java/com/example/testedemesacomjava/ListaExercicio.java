@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +17,9 @@ public class ListaExercicio extends AppCompatActivity {
 
     public String tipoExercicio = null;
     public TextView textTituloMenu = null;
+    public Button buttonExercicio1;
+    public Button buttonExercicio2;
+    public Button buttonExercicio3;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,18 @@ public class ListaExercicio extends AppCompatActivity {
 
         tipoExercicio = getIntent().getStringExtra("tipoExercicio");
         textTituloMenu = findViewById(R.id.id_text_legenda);
+        buttonExercicio1 = findViewById(R.id.button_exercicio1);
+        buttonExercicio2= findViewById(R.id.button_exercicio2);
+        buttonExercicio3 = findViewById(R.id.button_exercicio3);
+
+        //APENAS O TIPO DE EXERCÍCIO DE OPERADORES ARITMÉTICOS POSSUI 3 EXERCÍCIOS
+        if(!tipoExercicio.equals("aritmetico")){
+            buttonExercicio2.setVisibility(View.INVISIBLE);
+            buttonExercicio3.setVisibility(View.INVISIBLE);
+        }else{
+            buttonExercicio2.setVisibility(View.VISIBLE);
+            buttonExercicio3.setVisibility(View.VISIBLE);
+        }
         DefineTituloDoMenu();
 
     }
@@ -39,7 +55,7 @@ public class ListaExercicio extends AppCompatActivity {
             textTituloMenu.setText("ESTRUTURAS CONDICIONAIS");
         }else if (tipoExercicio.equals("repeticao")) {
             textTituloMenu.setText("ESTRUTURAS DE REPETIÇÃO");
-        }else if (tipoExercicio.equals("aritimetico")){
+        }else if (tipoExercicio.equals("aritmetico")){
             textTituloMenu.setText("OPERADORES ARITMÉTICOS");
         }else if(tipoExercicio.equals("listas")){
             textTituloMenu.setText("LISTAS");
@@ -64,23 +80,6 @@ public class ListaExercicio extends AppCompatActivity {
         intent.putExtra("tipoExercicio", tipoExercicio);
         startActivity(intent);
     }
-    public void IniciarExercicio4(View view){
-        Intent intent = new Intent(this, Exercicio.class);
-        intent.putExtra("numeroExercicio", "4");
-        intent.putExtra("tipoExercicio", tipoExercicio);
-        startActivity(intent);
-    }
-    public void IniciarExercicio5(View view){
-        Intent intent = new Intent(this, Exercicio.class);
-        intent.putExtra("numeroExercicio", "5");
-        intent.putExtra("tipoExercicio", tipoExercicio);
-        startActivity(intent);
-    }
-    public void IniciarExercicio6(View view){
-        Intent intent = new Intent(this, Exercicio.class);
-        intent.putExtra("numeroExercicio", "6");
-        intent.putExtra("tipoExercicio", tipoExercicio);
-        startActivity(intent);
-    }
+
 
 }
