@@ -25,6 +25,8 @@
             android:backgroundTint="@color/background_button_color"
             android:onClick="IniciarExercicio1"
             android:text="EXERCÍCIO 1"
+            android:textColor="@color/white"
+            android:textColorLink="#FFFFFF"
             android:textStyle="bold" />
 
         <Button
@@ -34,6 +36,8 @@
             android:backgroundTint="@color/background_button_color"
             android:onClick="IniciarExercicio2"
             android:text="EXERCÍCIO 2"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
             android:textStyle="bold" />
 
         <Button
@@ -43,6 +47,8 @@
             android:backgroundTint="@color/background_button_color"
             android:onClick="IniciarExercicio3"
             android:text="EXERCÍCIO 3"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
             android:textStyle="bold" />
 
     </LinearLayout>

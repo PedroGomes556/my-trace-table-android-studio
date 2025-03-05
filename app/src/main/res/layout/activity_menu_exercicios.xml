@@ -38,6 +38,7 @@
             android:backgroundTint="@color/background_button_color"
             android:onClick="OperadoresAritmeticos"
             android:text="OPERADORES ARITMÉTICOS"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <Button
@@ -47,6 +48,7 @@
             android:backgroundTint="@color/background_button_color"
             android:onClick="Condicionais"
             android:text="ESTRUTURAS CONDICIONAIS"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <Button
@@ -56,6 +58,7 @@
             android:backgroundTint="@color/background_button_color"
             android:onClick="EstruturaRepeticao"
             android:text="ESTRUTURAS DE REPETIÇÃO"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <Button
@@ -65,6 +68,7 @@
             android:backgroundTint="@color/background_button_color"
             android:onClick="Listas"
             android:text="LISTAS"
+            android:textColor="@color/white"
             android:textStyle="bold" />
     </LinearLayout>
 

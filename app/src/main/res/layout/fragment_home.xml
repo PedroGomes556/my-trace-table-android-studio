@@ -26,6 +26,7 @@
             android:backgroundTint="@color/background_button_color"
             android:onClick="Exercicios"
             android:text="EXERCÍCIOS"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
@@ -40,6 +41,7 @@
             android:backgroundTint="@color/background_button_color"
             android:onClick="Sobre"
             android:text="SOBRE"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
@@ -52,6 +54,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
             android:text="SAIR"
+            android:textColor="@color/white"
             android:textStyle="bold" />
     </LinearLayout>
 
