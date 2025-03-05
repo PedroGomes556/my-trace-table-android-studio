@@ -8,11 +8,8 @@ import java.util.List;
 public class RespostasAritmetico {
 
     private List<String> exercicio1 = new ArrayList();
-    private ArrayList<Integer> exercicio2 = new ArrayList();
-    private ArrayList<Integer> exercicio3 = new ArrayList();
-    private ArrayList<Integer> exercicio4= new ArrayList();
-    private ArrayList<Integer> exercicio5 = new ArrayList();
-    private ArrayList<Integer> exercicio6 = new ArrayList();
+    private List<String> exercicio2 = new ArrayList();
+    private List<String> exercicio3 = new ArrayList();
 
 
     public RespostasAritmetico(){
@@ -26,5 +23,13 @@ public class RespostasAritmetico {
 
     public List getExercicio1() {
         return exercicio1;
+    }
+
+    public List getExercicio2() {
+        return exercicio2;
+    }
+
+    public List getExercicio3() {
+        return exercicio3;
     }
 }
