@@ -24,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
+            android:fontFamily="@font/poppins"
             android:onClick="Exercicios"
             android:text="EXERCÍCIOS"
             android:textColor="@color/white"
