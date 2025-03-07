@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -69,6 +70,9 @@ public class Exercicio extends AppCompatActivity {
     RespostasCondicionais respostasCondicionais = new RespostasCondicionais();
     RespostasLista respostasLista = new RespostasLista();
     RespostasEstruturaDeRepeticao respostasEstruturaDeRepeticao = new RespostasEstruturaDeRepeticao();
+
+    MediaPlayer mediaPlayer;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -139,9 +143,9 @@ public class Exercicio extends AppCompatActivity {
 
             buttonRetornarMenuExercicio.setVisibility(View.INVISIBLE);
             buttonRetornarMenuExercicio.setClickable(false);
+
             buttonTentarDenovo.setVisibility(View.INVISIBLE);
             buttonTentarDenovo.setClickable(false);
-
 
             if (tipoExercicio.equals("aritmetico")) {
                 if (numeroExercicio.equals("1")) {
@@ -182,6 +186,9 @@ public class Exercicio extends AppCompatActivity {
 
                 // Fechar automaticamente após 2 segundos (2000ms)
                 new Handler().postDelayed(dialog::dismiss, 3000);
+                mediaPlayer = MediaPlayer.create(this, R.raw.success);
+                mediaPlayer.start();
+
 
             } else {
                 //Toast.makeText(Exercicio.this, "Resposta incorreta, tente novamente!", Toast.LENGTH_SHORT).show();
@@ -360,6 +367,7 @@ public class Exercicio extends AppCompatActivity {
     }
 
     public void VerificarResposta(List<String> resposta) {
+        acertouTudo = true;
         for (int i = 0; i < resposta.size(); i++) {
             String respostaCorreta = resposta.get(i).toString();
             String respostaDoUsuario = respostaUsuario.get(i);
