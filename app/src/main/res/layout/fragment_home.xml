@@ -35,11 +35,11 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonSobre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/background_button_color"
-            android:onClick="Sobre"
+            android:onClick="sobre"
             android:text="SOBRE"
             android:textColor="@color/white"
             android:textStyle="bold" />
@@ -55,6 +55,7 @@
             android:backgroundTint="@color/background_button_color"
             android:text="SAIR"
             android:textColor="@color/white"
+            android:onClick="FecharApp"
             android:textStyle="bold" />
     </LinearLayout>
 

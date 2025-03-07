@@ -20,7 +20,6 @@
     <string name="menu_slideshow">Sobre</string>
 
 
-
     <string name="descricao_do_projeto">
         Essa aplicação foi desenvolvida como Trabalho de Conclusão de Curso do aluno
         Pedro Gomes, do curso de Licenciatua em Ciências da Computação. Ela foi elaborada
@@ -30,7 +29,7 @@
 
     <string name="descricao_ajuda">
         O objetivo da aplicação é mostrar o valor das variáveis de acordo com cada linha.
-        Para isso, basta realizar as operações e ir preenchendo os valores correspondentes das
+        Para isso, basta realizar as operações e ir preenchendo os valores correspondentes dos
         campos.
     </string>
 </resources>

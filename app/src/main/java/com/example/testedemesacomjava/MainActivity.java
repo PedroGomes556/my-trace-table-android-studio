@@ -1,15 +1,23 @@
 package com.example.testedemesacomjava;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
+import com.example.testedemesacomjava.ui.gallery.GalleryFragment;
+import com.example.testedemesacomjava.ui.gallery.GalleryViewModel;
+import com.example.testedemesacomjava.ui.home.HomeFragment;
 import com.example.testedemesacomjava.ui.slideshow.SlideshowFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -50,9 +58,37 @@ private ActivityMainBinding binding;
         startActivity(intent);
     }
 
-    public void Sobre(View view){
 
+    public void sobre(View view){
+        Intent intent = new Intent(this, SobreActivity.class);
+        startActivity(intent);
     }
+
+    public void FecharApp(View view) {
+        Context context = view.getContext();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Fechar Aplicativo");
+        builder.setMessage("Deseja realmente sair do aplicativo?");
+        builder.setPositiveButton("Sim", (dialog, which) -> {
+            ((Activity) context).finishAffinity(); // Fecha o app
+        });
+        builder.setNegativeButton("Não", (dialog, which) -> dialog.dismiss());
+
+        // Criar o diálogo
+        AlertDialog alertDialog = builder.create();
+
+        // Mostrar o diálogo e mudar a cor de fundo
+        alertDialog.setOnShowListener(dialog -> {
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(
+                    ContextCompat.getColor(context, R.color.background_button_color)
+            ));
+        });
+
+        alertDialog.show();
+    }
+
+
 
 
 
