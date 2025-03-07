@@ -3,11 +3,16 @@ package com.example.testedemesacomjava;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +21,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -24,8 +31,17 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
+
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 public class Exercicio extends AppCompatActivity {
 
@@ -53,6 +69,7 @@ public class Exercicio extends AppCompatActivity {
     RespostasCondicionais respostasCondicionais = new RespostasCondicionais();
     RespostasLista respostasLista = new RespostasLista();
     RespostasEstruturaDeRepeticao respostasEstruturaDeRepeticao = new RespostasEstruturaDeRepeticao();
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +132,7 @@ public class Exercicio extends AppCompatActivity {
         });
 
         buttonTentarDenovo = findViewById(R.id.buttonTentarNovamente);
+
         buttonTentarDenovo.setOnClickListener(v -> {
             buttonVerificarRestposta.setClickable(true);
             buttonVerificarRestposta.setVisibility(View.VISIBLE);
@@ -123,21 +141,21 @@ public class Exercicio extends AppCompatActivity {
             buttonRetornarMenuExercicio.setClickable(false);
             buttonTentarDenovo.setVisibility(View.INVISIBLE);
             buttonTentarDenovo.setClickable(false);
-            
+
 
             if (tipoExercicio.equals("aritmetico")) {
-                if(numeroExercicio.equals("1")){
+                if (numeroExercicio.equals("1")) {
                     limparCampos(respostasAritmetico.getExercicio1());
-                }else if(numeroExercicio.equals("2")){
+                } else if (numeroExercicio.equals("2")) {
                     limparCampos(respostasAritmetico.getExercicio2());
-                }else {
+                } else {
                     limparCampos(respostasAritmetico.getExercicio3());
                 }
-            }else if (tipoExercicio.equals("condicional")) {
+            } else if (tipoExercicio.equals("condicional")) {
                 limparCampos(respostasCondicionais.getExercicio1());
-            }else if (tipoExercicio.equals("repeticao")) {
+            } else if (tipoExercicio.equals("repeticao")) {
                 limparCampos(respostasEstruturaDeRepeticao.getExercicio1());
-            }else{
+            } else {
                 limparCampos(respostasLista.getExercicio1());
             }
         });
@@ -147,10 +165,26 @@ public class Exercicio extends AppCompatActivity {
         buttonVerificarRestposta = findViewById(R.id.button31);
         buttonVerificarRestposta.setOnClickListener(v -> {
             VerificaResposta();
-            if(isAcertouTudo()){
-                Toast.makeText(Exercicio.this, "Resposta correta!", Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(Exercicio.this, "Resposta incorreta, tente novamente!", Toast.LENGTH_SHORT).show();
+            if (isAcertouTudo()) {
+                //Toast.makeText(Exercicio.this, "Resposta correta!", Toast.LENGTH_SHORT).show();
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+                // Inflar o layout personalizado
+                LayoutInflater inflater = LayoutInflater.from(this);
+                View dialogView = inflater.inflate(R.layout.dialog_text_image, null);
+
+
+                builder.setView(dialogView);
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                // Fechar automaticamente após 2 segundos (2000ms)
+                new Handler().postDelayed(dialog::dismiss, 3000);
+
+            } else {
+                //Toast.makeText(Exercicio.this, "Resposta incorreta, tente novamente!", Toast.LENGTH_SHORT).show();
                 buttonVerificarRestposta.setClickable(false);
                 buttonVerificarRestposta.setVisibility(View.INVISIBLE);
 
@@ -158,24 +192,39 @@ public class Exercicio extends AppCompatActivity {
                 buttonRetornarMenuExercicio.setClickable(true);
                 buttonTentarDenovo.setVisibility(View.VISIBLE);
                 buttonTentarDenovo.setClickable(true);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+                // Inflar o layout personalizado
+                LayoutInflater inflater = LayoutInflater.from(this);
+                View dialogView = inflater.inflate(R.layout.dialog_text_image_sad, null);
+
+
+                builder.setView(dialogView);
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                // Fechar automaticamente após 2 segundos (2000ms)
+                new Handler().postDelayed(dialog::dismiss, 3000);
             }
         });
 
         if (tipoExercicio.equals("aritmetico")) {
-            if(numeroExercicio.equals("1")){
+            if (numeroExercicio.equals("1")) {
                 imagemExercicio.setImageResource(R.drawable.aritmetico_exercicio1);
                 bloqueaCampos(respostasAritmetico.getExercicio1());
                 limparCampos(respostasAritmetico.getExercicio1());
-            }else if(numeroExercicio.equals("2")){
+            } else if (numeroExercicio.equals("2")) {
                 imagemExercicio.setImageResource(R.drawable.aritmetico_exercicio2);
                 bloqueaCampos(respostasAritmetico.getExercicio2());
                 limparCampos(respostasAritmetico.getExercicio2());
-            }else {
+            } else {
                 imagemExercicio.setImageResource(R.drawable.aritmetico_exercicio3);
                 bloqueaCampos(respostasAritmetico.getExercicio3());
                 limparCampos(respostasAritmetico.getExercicio3());
             }
-        }else if (tipoExercicio.equals("condicional")) {
+        } else if (tipoExercicio.equals("condicional")) {
             //DEIXANDO OCULTO OS CAMPOS QUE NÃO SERÃO USADOS
             legendaLinha4.setVisibility(View.INVISIBLE);
             legendaLinha5.setVisibility(View.INVISIBLE);
@@ -193,7 +242,7 @@ public class Exercicio extends AppCompatActivity {
             imagemExercicio.setImageResource(R.drawable.condicional_exercicio1);
             bloqueaCampos(respostasCondicionais.getExercicio1());
             limparCampos(respostasCondicionais.getExercicio1());
-        }else if (tipoExercicio.equals("repeticao")) {
+        } else if (tipoExercicio.equals("repeticao")) {
             //DEIXANDO OCULTO OS CAMPOS QUE NÃO SERÃO USADOS
             legendaLinha3.setVisibility(View.INVISIBLE);
             legendaLinha4.setVisibility(View.INVISIBLE);
@@ -215,7 +264,7 @@ public class Exercicio extends AppCompatActivity {
             imagemExercicio.setImageResource(R.drawable.estrutura_de_repeticao_exercicio1);
             bloqueaCampos(respostasEstruturaDeRepeticao.getExercicio1());
             limparCampos(respostasEstruturaDeRepeticao.getExercicio1());
-        }else{
+        } else {
             //DEIXANDO OCULTO OS CAMPOS QUE NÃO SERÃO USADOS
             legendaLinha3.setVisibility(View.INVISIBLE);
             legendaLinha4.setVisibility(View.INVISIBLE);
@@ -247,11 +296,11 @@ public class Exercicio extends AppCompatActivity {
 
     }
 
-    public void bloqueaCampos(List<String> resposta){
+    public void bloqueaCampos(List<String> resposta) {
 
         //Indica que o campo deve ficar bloqueado, pois a variável não existe
         for (int i = 0; i < resposta.size(); i++) {
-            if (resposta.get(i).equals("*")){
+            if (resposta.get(i).equals("*")) {
                 campos.get(i).setFocusable(false);
                 campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado));
             }
@@ -259,26 +308,26 @@ public class Exercicio extends AppCompatActivity {
         }
     }
 
-    public void DefineNumeroExercicio(){
-        if(numeroExercicio.equals("1")){
+    public void DefineNumeroExercicio() {
+        if (numeroExercicio.equals("1")) {
             textTituloMenu.setText("EXERCÍCIO 1");
-        }else if (numeroExercicio.equals("2")) {
+        } else if (numeroExercicio.equals("2")) {
             textTituloMenu.setText("EXERCÍCIO 2");
-        }else if (numeroExercicio.equals("3")){
+        } else if (numeroExercicio.equals("3")) {
             textTituloMenu.setText("EXERCÍCIO 3");
-        }else if(numeroExercicio.equals("4")){
+        } else if (numeroExercicio.equals("4")) {
             textTituloMenu.setText("EXERCÍCIO 4");
-        }else if(numeroExercicio.equals("5")) {
+        } else if (numeroExercicio.equals("5")) {
             textTituloMenu.setText("EXERCÍCIO 5");
-        }else{
+        } else {
             textTituloMenu.setText("EXERCÍCIO 6");
         }
     }
 
-    public void limparCampos(List<String> resposta){
-        for (int i = 0; i < campos.size(); i++){
+    public void limparCampos(List<String> resposta) {
+        for (int i = 0; i < campos.size(); i++) {
             //Limpar apenas os campos que não estejam bloqueados
-            if (!resposta.get(i).equals("*")){
+            if (!resposta.get(i).equals("*")) {
                 campos.get(i).setFocusable(true);
                 campos.get(i).setFocusableInTouchMode(true);
                 campos.get(i).setText("");
@@ -288,11 +337,11 @@ public class Exercicio extends AppCompatActivity {
         }
     }
 
-    public boolean isAcertouTudo(){
+    public boolean isAcertouTudo() {
         return acertouTudo;
     }
 
-    public void getResposta(){
+    public void getResposta() {
         respostaUsuario.add(0, campo1.getText().toString());
         respostaUsuario.add(1, campo2.getText().toString());
         respostaUsuario.add(2, campo3.getText().toString());
@@ -310,7 +359,7 @@ public class Exercicio extends AppCompatActivity {
         respostaUsuario.add(14, campo15.getText().toString());
     }
 
-    public void VerificarResposta(List<String> resposta){
+    public void VerificarResposta(List<String> resposta) {
         for (int i = 0; i < resposta.size(); i++) {
             String respostaCorreta = resposta.get(i).toString();
             String respostaDoUsuario = respostaUsuario.get(i);
@@ -319,7 +368,7 @@ public class Exercicio extends AppCompatActivity {
                 campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_verde_claro));
                 campos.get(i).setFocusable(false);
                 campos.get(i).setTextColor(Color.parseColor("#006400"));
-            } else if (!respostaCorreta.equals(respostaDoUsuario) && !resposta.get(i).equals("*")){
+            } else if (!respostaCorreta.equals(respostaDoUsuario) && !resposta.get(i).equals("*")) {
                 acertouTudo = false;
                 campos.get(i).setFocusable(false);
                 campos.get(i).setBackground(ContextCompat.getDrawable(this, R.drawable.shape_arredondado_vermelho));
@@ -348,20 +397,22 @@ public class Exercicio extends AppCompatActivity {
 
         //Toast.makeText(Exercicio.this, respostaUsuario.toString(), Toast.LENGTH_SHORT).show();
         if (tipoExercicio.equals("aritmetico")) {
-            if(numeroExercicio.equals("1")){
+            if (numeroExercicio.equals("1")) {
                 VerificarResposta(respostasAritmetico.getExercicio1());
-            }else if(numeroExercicio.equals("2")){
+            } else if (numeroExercicio.equals("2")) {
                 VerificarResposta(respostasAritmetico.getExercicio2());
-            }else {
+            } else {
                 VerificarResposta(respostasAritmetico.getExercicio3());
             }
-        }else if (tipoExercicio.equals("condicional")) {
+        } else if (tipoExercicio.equals("condicional")) {
             VerificarResposta(respostasCondicionais.getExercicio1());
-        }else if (tipoExercicio.equals("repeticao")) {
+        } else if (tipoExercicio.equals("repeticao")) {
             VerificarResposta(respostasEstruturaDeRepeticao.getExercicio1());
-        }else{
+        } else {
             VerificarResposta(respostasLista.getExercicio1());
         }
     }
+
+
 
 }
