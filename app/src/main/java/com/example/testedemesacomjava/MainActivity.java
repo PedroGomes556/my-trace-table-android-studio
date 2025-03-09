@@ -41,11 +41,11 @@ private ActivityMainBinding binding;
      setContentView(binding.getRoot());
 
 
-        setSupportActionBar(binding.appBarMain.toolbar);
+        setSupportActionBar(binding.appBarMain.toolbar2);
 
         // Verifica se o Overflow Menu (três pontinhos) existe e altera a cor para preto
-        if (binding.appBarMain.toolbar.getOverflowIcon() != null) {
-            binding.appBarMain.toolbar.getOverflowIcon().setTint(ContextCompat.getColor(this, android.R.color.black));
+        if (binding.appBarMain.toolbar2.getOverflowIcon() != null) {
+            binding.appBarMain.toolbar2.getOverflowIcon().setTint(ContextCompat.getColor(this, android.R.color.black));
         }
 
 
@@ -63,7 +63,7 @@ private ActivityMainBinding binding;
 
         // Instanciação do ActionBarDrawerToggle
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, binding.appBarMain.toolbar,
+                this, drawer, binding.appBarMain.toolbar2,
                 R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close);
 
@@ -74,16 +74,12 @@ private ActivityMainBinding binding;
         // Mudar a cor das três barrinhas (hambúrguer) para preto
         toggle.getDrawerArrowDrawable().setColor(ContextCompat.getColor(this, android.R.color.black));
 
-
-
     }
-
 
     public void Exercicios(View view){
         Intent intent = new Intent(this, MenuExercicio.class);
         startActivity(intent);
     }
-
 
     public void sobre(View view){
         Intent intent = new Intent(this, SobreActivity.class);

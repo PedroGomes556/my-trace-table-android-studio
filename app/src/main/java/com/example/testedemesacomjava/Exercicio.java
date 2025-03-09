@@ -16,6 +16,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,8 +27,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -89,6 +94,16 @@ public class Exercicio extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Ativa a Toolbar como ActionBar para suportar o menu
+        // Configura a Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbarTelaExercicio);
+        setSupportActionBar(toolbar);
+
+        // Altera a cor do ícone de overflow (três pontinhos)
+        if (toolbar.getOverflowIcon() != null) {
+            toolbar.getOverflowIcon().setTint(Color.BLACK); // Troque Color.BLACK pela cor desejada
+        }
 
 
         campo1 = findViewById(R.id.editTextNumber1);
@@ -367,6 +382,24 @@ public class Exercicio extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_activity2, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            // Adicione ação para o item do menu
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     //Indica que o campo deve ficar bloqueado, pois a variável não existe
     public void bloqueaCampos(List<String> resposta) {

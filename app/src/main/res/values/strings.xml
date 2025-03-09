@@ -32,4 +32,5 @@
         Para isso, basta realizar as operações e ir preenchendo os valores correspondentes dos
         campos.
     </string>
+    <string name="title_activity_menu">MenuActivity</string>
 </resources>
