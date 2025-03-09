@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item
+        android:id="@+id/action_menu_principal"
+        android:icon="@android:drawable/ic_menu_help"
+        android:orderInCategory="100"
+        android:title="Início"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_menu_exercicios"
+        android:icon="@android:drawable/ic_menu_help"
+        android:orderInCategory="100"
+        android:title="Exercícios"
+        app:showAsAction="never" />
+
+
     <item
         android:id="@+id/action_settings"
         android:icon="@android:drawable/ic_menu_help"
         android:orderInCategory="100"
         android:title="Ajuda"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sobre"
+        android:icon="@android:drawable/ic_menu_help"
+        android:orderInCategory="100"
+        android:title="Sobre"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sair"
+        android:icon="@android:drawable/ic_menu_help"
+        android:orderInCategory="100"
+        android:title="Sair"
+        app:showAsAction="never" />
+
+
+
+
+
+
 </menu>
