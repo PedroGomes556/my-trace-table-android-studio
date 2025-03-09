@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toolbar;
 
 import com.example.testedemesacomjava.ui.gallery.GalleryFragment;
 import com.example.testedemesacomjava.ui.gallery.GalleryViewModel;
@@ -15,6 +16,7 @@ import com.example.testedemesacomjava.ui.slideshow.SlideshowFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -38,7 +40,14 @@ private ActivityMainBinding binding;
      binding = ActivityMainBinding.inflate(getLayoutInflater());
      setContentView(binding.getRoot());
 
+
         setSupportActionBar(binding.appBarMain.toolbar);
+
+        // Verifica se o Overflow Menu (três pontinhos) existe e altera a cor para preto
+        if (binding.appBarMain.toolbar.getOverflowIcon() != null) {
+            binding.appBarMain.toolbar.getOverflowIcon().setTint(ContextCompat.getColor(this, android.R.color.black));
+        }
+
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -51,7 +60,24 @@ private ActivityMainBinding binding;
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        // Instanciação do ActionBarDrawerToggle
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, binding.appBarMain.toolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
+
+        // Sincroniza o estado do toggle
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        // Mudar a cor das três barrinhas (hambúrguer) para preto
+        toggle.getDrawerArrowDrawable().setColor(ContextCompat.getColor(this, android.R.color.black));
+
+
+
     }
+
 
     public void Exercicios(View view){
         Intent intent = new Intent(this, MenuExercicio.class);
