@@ -1,6 +1,9 @@
 package com.example.testedemesacomjava;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -8,8 +11,10 @@ import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -49,8 +54,42 @@ public class SobreActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            // Adicione ação para o item do menu
+        Intent intent;
+        if (id == R.id.action_menu_principal) {
+            intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }else if(id == R.id.action_menu_exercicios){
+            intent = new Intent(this, MenuExercicio.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_ajuda) {
+            intent = new Intent(this, AjudaActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_sobre) {
+            intent = new Intent(this, SobreActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_sair){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Fechar Aplicativo");
+            builder.setMessage("Deseja realmente sair do aplicativo?");
+            builder.setPositiveButton("Sim", (dialog, which) -> {
+                ((Activity) this).finishAffinity(); // Fecha o app
+            });
+            builder.setNegativeButton("Não", (dialog, which) -> dialog.dismiss());
+
+            // Criar o diálogo
+            AlertDialog alertDialog = builder.create();
+
+            // Mostrar o diálogo e mudar a cor de fundo
+            alertDialog.setOnShowListener(dialog -> {
+                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(
+                        ContextCompat.getColor(this, R.color.background_button_color)
+                ));
+            });
+            alertDialog.show();
             return true;
         }
         return super.onOptionsItemSelected(item);
