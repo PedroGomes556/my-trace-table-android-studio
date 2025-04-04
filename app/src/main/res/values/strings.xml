@@ -21,16 +21,33 @@
 
 
     <string name="descricao_do_projeto">
+        O My Trace Table é uma aplicação que tem por objetivo promover exercícios de python
+        no estilho Teste de Mesa, proporcionando feedbacks automáticos das respostas.\n\n
+
         Essa aplicação foi desenvolvida como Trabalho de Conclusão de Curso do aluno
-        Pedro Gomes, do curso de Licenciatua em Ciências da Computação. Ela foi elaborada
+        Pedro Gomes, do curso de Licenciatura em Ciências da Computação. Ela foi elaborada
         com base no TCC do aluno Diego Tavares, visando desenvolvedor uma versão mobile do
-        My Trace Table.
+        My Trace Table.\n\n
+
+        A orientadora do projeto foi Ayla Dantas Rebouças,  professora da UFPB.\n\n
+
+        A ideia também foi inspirada nos exercícios de Vanessa Dantas, professora da
+        UFPB.\n\n
+
     </string>
 
     <string name="descricao_ajuda">
-        O objetivo da aplicação é mostrar o valor das variáveis de acordo com cada linha.
-        Para isso, basta realizar as operações e ir preenchendo os valores correspondentes dos
-        campos.
+        Em cada tela de exercício, como a apresentada na figura abaixo, você verá um trecho de
+        código e deve preencher as caixas de texto em branco com os valores das variáveis durante a execução de cada uma das linhas também indicadas.
+    </string>
+    <string name="descricao_ajuda2">
+        Em cada imagem terá os números das linhas que deverão ser analisadas, conforme imagem a seguir:
+    </string>
+    <string name="descricao_ajuda3">
+        No exemplo do exercício a seguir é possível notar o preenchimento da variável "A" na linha 1.
+    </string>
+    <string name="descricao_ajuda4">
+        \n\n Depois de preencher todos os campos aperte no botão "'VERIFICAR RESPOSTA'".
     </string>
     <string name="title_activity_menu">MenuActivity</string>
 </resources>

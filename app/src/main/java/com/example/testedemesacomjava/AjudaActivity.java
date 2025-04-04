@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -46,6 +48,13 @@ public class AjudaActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity2, menu);
+        for (int i = 0; i < menu.size(); i++) {
+            MenuItem item = menu.getItem(i);
+            SpannableString spanString = new SpannableString(item.getTitle().toString());
+            spanString.setSpan(new ForegroundColorSpan(Color.BLACK), 0, spanString.length(), 0); // Cor do texto
+            item.setTitle(spanString);
+        }
+        super.onCreateOptionsMenu(menu);
         return true;
     }
 

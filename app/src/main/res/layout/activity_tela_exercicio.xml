@@ -571,7 +571,7 @@
             android:clickable="false"
             android:fontFamily="@font/poppins"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="MENU INIICIAL"
+            android:text="MENU INICIAL"
             android:textColor="@color/white"
             android:textColorLink="@color/background_button_color"
             android:textStyle="bold"
