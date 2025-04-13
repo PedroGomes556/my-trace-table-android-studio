@@ -566,7 +566,12 @@ public class Exercicio extends AppCompatActivity {
         } else if (tipoExercicio.equals("repeticao")) {
             VerificarResposta(respostasEstruturaDeRepeticao.getExercicio1());
         } else {
-            VerificarResposta(respostasLista.getExercicio1());
+            if (numeroExercicio.equals("1")) {
+                VerificarResposta(respostasLista.getExercicio1());
+            }else{
+                VerificarResposta(respostasLista.getExercicio2());
+            }
+
         }
 
 

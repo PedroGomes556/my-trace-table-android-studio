@@ -20,6 +20,9 @@ public class RespostasLista {
     public List getExercicio1() {
         return exercicio1;
     }
+    public List getExercicio2() {
+        return exercicio1;
+    }
 
 }
 
