@@ -18,9 +18,39 @@ public class RespostasAritmetico {
 
     //POPULA AS RESPOSTAS. QUANDO TIVER UM "*" SIGNIFICA QUE A VARIÁVEL NÃO EXISTE NAQUELA POSIÇÃO
     private void populaRespostas(){
-      exercicio1.addAll(Arrays.asList("3", "*", "*", "3", "27", "*", "3", "27", "10", "1", "27", "10", "1", "27", "17"));
-      exercicio2.addAll(Arrays.asList("*", "*", "49", "7", "*", "49", "7", "4", "49", "7", "4", "9", "64", "4", "9"));
-      exercicio3.addAll(Arrays.asList("*", "8", "*", "*", "8", "3", "5", "8", "3", "5", "6", "3", "5", "6", "11"));
+      exercicio1.addAll(Arrays.asList(
+              "3", "*", "*",
+              "3", "27", "*",
+              "3", "27", "10",
+              "1", "27", "10",
+              "1", "27", "17",
+              "*", "*", "*",
+              "*", "*", "*",
+              "*", "*", "*",
+              "*", "*", "*",
+              "*", "*", "*"));
+      exercicio2.addAll(Arrays.asList(
+              "*", "*", "49",
+              "7", "*", "49",
+              "7", "4", "49",
+              "7", "4", "9",
+              "64", "4", "9",
+              "*", "*", "*",
+              "*", "*", "*",
+              "*", "*", "*",
+              "*", "*", "*",
+              "*", "*", "*"));
+      exercicio3.addAll(Arrays.asList(
+              "*", "8", "*",
+              "*", "8", "3",
+              "5", "8", "3",
+              "5", "6", "3",
+              "5", "6", "11",
+              "*", "*", "*",
+              "*", "*", "*",
+              "*", "*", "*",
+              "*", "*", "*",
+              "*", "*", "*"));
     }
 
     public List getExercicio1() {

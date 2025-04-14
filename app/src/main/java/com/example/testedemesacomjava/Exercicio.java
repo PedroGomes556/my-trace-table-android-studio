@@ -57,7 +57,12 @@ import androidx.core.app.NotificationManagerCompat;
 public class Exercicio extends AppCompatActivity {
 
     EditText campo1, campo2, campo3, campo4, campo5,
-            campo6, campo7, campo8, campo9, campo10, campo11, campo12, campo13, campo14, campo15;
+            campo6, campo7, campo8, campo9, campo10,
+            campo11, campo12, campo13, campo14, campo15,
+            campo16, campo17, campo18, campo19, campo20,
+            campo21, campo22, campo23, campo24, campo25,
+            campo26, campo27, campo28, campo29, campo30;
+
     private String numeroExercicio = null;
     private TextView textTituloMenu = null;
     private String tipoExercicio = null;
@@ -68,7 +73,8 @@ public class Exercicio extends AppCompatActivity {
 
     boolean tentandoNovamente = false;
 
-    private EditText legendaLinha1, legendaLinha2, legendaLinha3, legendaLinha4, legendaLinha5;
+    private EditText legendaLinha1, legendaLinha2, legendaLinha3,
+    legendaLinha4, legendaLinha5, legendaLinha6, legendaLinha7, legendaLinha8, legendaLinha9, legendaLinha10;
 
 
     private EditText legendaVariavel1, legendaVariavel2, legendaVariavel3;
@@ -123,12 +129,31 @@ public class Exercicio extends AppCompatActivity {
         campo13 = findViewById(R.id.editTextNumber13);
         campo14 = findViewById(R.id.editTextNumber14);
         campo15 = findViewById(R.id.editTextNumber15);
+        campo16 = findViewById(R.id.editTextNumber16);
+        campo17 = findViewById(R.id.editTextNumber17);
+        campo18 = findViewById(R.id.editTextNumber18);
+        campo19 = findViewById(R.id.editTextNumber19);
+        campo20 = findViewById(R.id.editTextNumber20);
+        campo21 = findViewById(R.id.editTextNumber21);
+        campo22 = findViewById(R.id.editTextNumber22);
+        campo23 = findViewById(R.id.editTextNumber23);
+        campo24 = findViewById(R.id.editTextNumber24);
+        campo25 = findViewById(R.id.editTextNumber25);
+        campo26 = findViewById(R.id.editTextNumber26);
+        campo27 = findViewById(R.id.editTextNumber27);
+        campo28 = findViewById(R.id.editTextNumber28);
+        campo29 = findViewById(R.id.editTextNumber29);
+        campo30 = findViewById(R.id.editTextNumber30);
 
         campos = Arrays.asList(
                 campo1, campo2, campo3, campo4, campo5,
                 campo6, campo7, campo8, campo9, campo10,
-                campo11, campo12, campo13, campo14, campo15
+                campo11, campo12, campo13, campo14, campo15,
+                campo16, campo17, campo18, campo19, campo20,
+                campo21, campo22, campo23, campo24, campo25,
+                campo26, campo27, campo28, campo29, campo30
         );
+
 
 
         //RECUPERANDO INTENT
@@ -145,6 +170,12 @@ public class Exercicio extends AppCompatActivity {
         legendaLinha3 = findViewById(R.id.linha3);
         legendaLinha4 = findViewById(R.id.linha4);
         legendaLinha5 = findViewById(R.id.linha5);
+        legendaLinha6 = findViewById(R.id.linha6);
+        legendaLinha7 = findViewById(R.id.linha7);
+        legendaLinha8 = findViewById(R.id.linha8);
+        legendaLinha9 = findViewById(R.id.linha9);
+        legendaLinha10 = findViewById(R.id.linha10);
+
 
         legendaVariavel1 = findViewById(R.id.lengendaVariavel1);
         legendaVariavel2 = findViewById(R.id.lengendaVariavel2);
@@ -299,83 +330,166 @@ public class Exercicio extends AppCompatActivity {
             }
         });
 
+
+        //OCULTANDO AS CAIXAS DE TEXTO DE ACORDO COM CADA RESPOSTA
         if (tipoExercicio.equals("aritmetico")) {
             if (numeroExercicio.equals("1")) {
                 imagemExercicio.setImageResource(R.drawable.aritmetico_exercicio1);
                 bloqueaCampos(respostasAritmetico.getExercicio1());
                 limparCampos(respostasAritmetico.getExercicio1());
+                //ocultando a linha 6
+                legendaLinha6.setVisibility(View.INVISIBLE);
+                campo16.setVisibility(View.INVISIBLE);
+                campo17.setVisibility(View.INVISIBLE);
+                campo18.setVisibility(View.INVISIBLE);
+                //ocultando a linha 7
+                legendaLinha7.setVisibility(View.INVISIBLE);
+                campo19.setVisibility(View.INVISIBLE);
+                campo20.setVisibility(View.INVISIBLE);
+                campo21.setVisibility(View.INVISIBLE);
+                //ocultando a linha 8
+                legendaLinha8.setVisibility(View.INVISIBLE);
+                campo22.setVisibility(View.INVISIBLE);
+                campo23.setVisibility(View.INVISIBLE);
+                campo24.setVisibility(View.INVISIBLE);
+                //ocultando a linha 9
+                legendaLinha9.setVisibility(View.INVISIBLE);
+                campo25.setVisibility(View.INVISIBLE);
+                campo26.setVisibility(View.INVISIBLE);
+                campo27.setVisibility(View.INVISIBLE);
+                //ocultando a linha 10
+                legendaLinha10.setVisibility(View.INVISIBLE);
+                campo28.setVisibility(View.INVISIBLE);
+                campo29.setVisibility(View.INVISIBLE);
+                campo30.setVisibility(View.INVISIBLE);
+
             } else if (numeroExercicio.equals("2")) {
                 imagemExercicio.setImageResource(R.drawable.aritmetico_exercicio2);
                 bloqueaCampos(respostasAritmetico.getExercicio2());
                 limparCampos(respostasAritmetico.getExercicio2());
+                //ocultando a linha 6
+                legendaLinha6.setVisibility(View.INVISIBLE);
+                campo16.setVisibility(View.INVISIBLE);
+                campo17.setVisibility(View.INVISIBLE);
+                campo18.setVisibility(View.INVISIBLE);
+                //ocultando a linha 7
+                legendaLinha7.setVisibility(View.INVISIBLE);
+                campo19.setVisibility(View.INVISIBLE);
+                campo20.setVisibility(View.INVISIBLE);
+                campo21.setVisibility(View.INVISIBLE);
+                //ocultando a linha 8
+                legendaLinha8.setVisibility(View.INVISIBLE);
+                campo22.setVisibility(View.INVISIBLE);
+                campo23.setVisibility(View.INVISIBLE);
+                campo24.setVisibility(View.INVISIBLE);
+                //ocultando a linha 9
+                legendaLinha9.setVisibility(View.INVISIBLE);
+                campo25.setVisibility(View.INVISIBLE);
+                campo26.setVisibility(View.INVISIBLE);
+                campo27.setVisibility(View.INVISIBLE);
+                //ocultando a linha 10
+                legendaLinha10.setVisibility(View.INVISIBLE);
+                campo28.setVisibility(View.INVISIBLE);
+                campo29.setVisibility(View.INVISIBLE);
+                campo30.setVisibility(View.INVISIBLE);
             } else {
                 imagemExercicio.setImageResource(R.drawable.aritmetico_exercicio3);
                 bloqueaCampos(respostasAritmetico.getExercicio3());
                 limparCampos(respostasAritmetico.getExercicio3());
+                //ocultando a linha 6
+                legendaLinha6.setVisibility(View.INVISIBLE);
+                campo16.setVisibility(View.INVISIBLE);
+                campo17.setVisibility(View.INVISIBLE);
+                campo18.setVisibility(View.INVISIBLE);
+                //ocultando a linha 7
+                legendaLinha7.setVisibility(View.INVISIBLE);
+                campo19.setVisibility(View.INVISIBLE);
+                campo20.setVisibility(View.INVISIBLE);
+                campo21.setVisibility(View.INVISIBLE);
+                //ocultando a linha 8
+                legendaLinha8.setVisibility(View.INVISIBLE);
+                campo22.setVisibility(View.INVISIBLE);
+                campo23.setVisibility(View.INVISIBLE);
+                campo24.setVisibility(View.INVISIBLE);
+                //ocultando a linha 9
+                legendaLinha9.setVisibility(View.INVISIBLE);
+                campo25.setVisibility(View.INVISIBLE);
+                campo26.setVisibility(View.INVISIBLE);
+                campo27.setVisibility(View.INVISIBLE);
+                //ocultando a linha 10
+                legendaLinha10.setVisibility(View.INVISIBLE);
+                campo28.setVisibility(View.INVISIBLE);
+                campo29.setVisibility(View.INVISIBLE);
+                campo30.setVisibility(View.INVISIBLE);
             }
         } else if (tipoExercicio.equals("condicional")) {
             //DEIXANDO OCULTO OS CAMPOS QUE NÃO SERÃO USADOS
-            legendaLinha4.setVisibility(View.INVISIBLE);
-            legendaLinha5.setVisibility(View.INVISIBLE);
-            campo10.setVisibility(View.INVISIBLE);
-            campo11.setVisibility(View.INVISIBLE);
-            campo12.setVisibility(View.INVISIBLE);
-            campo13.setVisibility(View.INVISIBLE);
-            campo14.setVisibility(View.INVISIBLE);
-            campo15.setVisibility(View.INVISIBLE);
 
-            //MUDANDO O NÚMERO DA LINHA
-            legendaLinha2.setText("6");
-            legendaLinha3.setText("7");
+            //ocultando a linha 3
+            legendaLinha3.setVisibility(View.GONE);
+            campo7.setVisibility(View.GONE);
+            campo8.setVisibility(View.GONE);
+            campo9.setVisibility(View.GONE);
+            //ocultando a linha 8
+            legendaLinha8.setVisibility(View.INVISIBLE);
+            campo22.setVisibility(View.INVISIBLE);
+            campo23.setVisibility(View.INVISIBLE);
+            campo24.setVisibility(View.INVISIBLE);
+            //ocultando a linha 9
+            legendaLinha9.setVisibility(View.INVISIBLE);
+            campo25.setVisibility(View.INVISIBLE);
+            campo26.setVisibility(View.INVISIBLE);
+            campo27.setVisibility(View.INVISIBLE);
+            //ocultando a linha 10
+            legendaLinha10.setVisibility(View.INVISIBLE);
+            campo28.setVisibility(View.INVISIBLE);
+            campo29.setVisibility(View.INVISIBLE);
+            campo30.setVisibility(View.INVISIBLE);
 
             imagemExercicio.setImageResource(R.drawable.condicional_exercicio1);
             bloqueaCampos(respostasCondicionais.getExercicio1());
             limparCampos(respostasCondicionais.getExercicio1());
         } else if (tipoExercicio.equals("repeticao")) {
             //DEIXANDO OCULTO OS CAMPOS QUE NÃO SERÃO USADOS
-            legendaLinha3.setVisibility(View.INVISIBLE);
-            legendaLinha4.setVisibility(View.INVISIBLE);
-            legendaLinha5.setVisibility(View.INVISIBLE);
-            campo7.setVisibility(View.INVISIBLE);
-            campo8.setVisibility(View.INVISIBLE);
-            campo9.setVisibility(View.INVISIBLE);
-            campo10.setVisibility(View.INVISIBLE);
-            campo11.setVisibility(View.INVISIBLE);
-            campo12.setVisibility(View.INVISIBLE);
-            campo13.setVisibility(View.INVISIBLE);
-            campo14.setVisibility(View.INVISIBLE);
-            campo15.setVisibility(View.INVISIBLE);
-
-            //MUDANDO O NÚMERO DA LINHA
-            legendaLinha1.setText("3");
-            legendaLinha2.setText("6");
+            legendaLinha6.setText("4");
+            legendaLinha7.setText("5");
+            legendaLinha8.setText("4");
+            legendaLinha9.setText("5");
+            legendaLinha10.setText("6");
 
             imagemExercicio.setImageResource(R.drawable.estrutura_de_repeticao_exercicio1);
             bloqueaCampos(respostasEstruturaDeRepeticao.getExercicio1());
             limparCampos(respostasEstruturaDeRepeticao.getExercicio1());
         } else {
             //DEIXANDO OCULTO OS CAMPOS QUE NÃO SERÃO USADOS
-            legendaLinha3.setVisibility(View.INVISIBLE);
-            legendaLinha4.setVisibility(View.INVISIBLE);
-            legendaLinha5.setVisibility(View.INVISIBLE);
-            campo7.setVisibility(View.INVISIBLE);
-            campo8.setVisibility(View.INVISIBLE);
-            campo9.setVisibility(View.INVISIBLE);
-            campo10.setVisibility(View.INVISIBLE);
-            campo11.setVisibility(View.INVISIBLE);
-            campo12.setVisibility(View.INVISIBLE);
-            campo13.setVisibility(View.INVISIBLE);
-            campo14.setVisibility(View.INVISIBLE);
-            campo15.setVisibility(View.INVISIBLE);
+            //ocultando a linha 7
+            legendaLinha7.setVisibility(View.INVISIBLE);
+            campo19.setVisibility(View.INVISIBLE);
+            campo20.setVisibility(View.INVISIBLE);
+            campo21.setVisibility(View.INVISIBLE);
+            //ocultando a linha 8
+            legendaLinha8.setVisibility(View.INVISIBLE);
+            campo22.setVisibility(View.INVISIBLE);
+            campo23.setVisibility(View.INVISIBLE);
+            campo24.setVisibility(View.INVISIBLE);
+            //ocultando a linha 9
+            legendaLinha9.setVisibility(View.INVISIBLE);
+            campo25.setVisibility(View.INVISIBLE);
+            campo26.setVisibility(View.INVISIBLE);
+            campo27.setVisibility(View.INVISIBLE);
+            //ocultando a linha 10
+            legendaLinha10.setVisibility(View.INVISIBLE);
+            campo28.setVisibility(View.INVISIBLE);
+            campo29.setVisibility(View.INVISIBLE);
+            campo30.setVisibility(View.INVISIBLE);
 
-            //EXCLUINDO A COLUNA 2
-            campo3.setVisibility(View.GONE);
-            campo6.setVisibility(View.GONE);
-            legendaVariavel2.setVisibility(View.GONE);
-
-            //MUDANDO O NÚMERO DA LINHA
             legendaLinha1.setText("2");
-            legendaLinha2.setText("5");
+            legendaLinha2.setText("3");
+            legendaLinha3.setText("4");
+            legendaLinha4.setText("3");
+            legendaLinha5.setText("4");
+            legendaLinha6.setText("5");
+
 
             imagemExercicio.setImageResource(R.drawable.lista_exercicio1);
             bloqueaCampos(respostasLista.getExercicio1());
@@ -505,7 +619,24 @@ public class Exercicio extends AppCompatActivity {
         respostaUsuario.add(12, campo13.getText().toString());
         respostaUsuario.add(13, campo14.getText().toString());
         respostaUsuario.add(14, campo15.getText().toString());
+        respostaUsuario.add(15, campo16.getText().toString());
+        respostaUsuario.add(16, campo17.getText().toString());
+        respostaUsuario.add(17, campo18.getText().toString());
+        respostaUsuario.add(18, campo19.getText().toString());
+        respostaUsuario.add(19, campo20.getText().toString());
+        respostaUsuario.add(20, campo21.getText().toString());
+        respostaUsuario.add(21, campo22.getText().toString());
+        respostaUsuario.add(22, campo23.getText().toString());
+        respostaUsuario.add(23, campo24.getText().toString());
+        respostaUsuario.add(24, campo25.getText().toString());
+        respostaUsuario.add(25, campo26.getText().toString());
+        respostaUsuario.add(26, campo27.getText().toString());
+        respostaUsuario.add(27, campo28.getText().toString());
+        respostaUsuario.add(28, campo29.getText().toString());
+        respostaUsuario.add(29, campo30.getText().toString());
+
     }
+
 
     public void VerificarResposta(List<String> resposta) {
         acertouTudo = true;
@@ -550,8 +681,12 @@ public class Exercicio extends AppCompatActivity {
         campos = Arrays.asList(
                 campo1, campo2, campo3, campo4, campo5,
                 campo6, campo7, campo8, campo9, campo10,
-                campo11, campo12, campo13, campo14, campo15
+                campo11, campo12, campo13, campo14, campo15,
+                campo16, campo17, campo18, campo19, campo20,
+                campo21, campo22, campo23, campo24, campo25,
+                campo26, campo27, campo28, campo29, campo30
         );
+
 
         if (tipoExercicio.equals("aritmetico")) {
             if (numeroExercicio.equals("1")) {

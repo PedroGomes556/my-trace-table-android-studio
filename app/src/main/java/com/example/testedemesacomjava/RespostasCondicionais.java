@@ -14,7 +14,17 @@ public class RespostasCondicionais {
 
     //POPULA AS RESPOSTAS. QUANDO TIVER UM "*" SIGNIFICA QUE A VARIÁVEL NÃO EXISTE NAQUELA POSIÇÃO
     private void populaRespostas(){
-        exercicio1.addAll(Arrays.asList("5", "*", "*", "5", "15", "20", "14", "15", "20", "*", "*", "*", "*", "*", "*"));
+        exercicio1.addAll(Arrays.asList(
+                "5", "*", "*",
+                "5", "*", "*",
+                "*", "*", "*",
+                "5", "*", "*",
+                "5", "15", "*",
+                "5", "15", "20",
+                "14", "15", "20",
+                "*", "*", "*",
+                "*", "*", "*",
+                "*", "*", "*"));
     }
 
     public List getExercicio1() {

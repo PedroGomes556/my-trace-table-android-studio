@@ -14,7 +14,17 @@ public class RespostasEstruturaDeRepeticao {
 
     //POPULA AS RESPOSTAS. QUANDO TIVER UM "*" SIGNIFICA QUE A VARIÁVEL NÃO EXISTE NAQUELA POSIÇÃO
     private void populaRespostas(){
-        exercicio1.addAll(Arrays.asList("1", "12", "0", "1", "0", "0", "*", "*", "*", "*", "*", "*", "*", "*", "*"));
+        exercicio1.addAll(Arrays.asList(
+                "4", "*", "*",
+                "4", "12", "*",
+                "4", "12", "2",
+                "4", "12", "2",
+                "4", "9", "2",
+                "4", "9", "2",
+                "4", "6", "2",
+                "4", "6", "2",
+                "4", "3", "2",
+                "4", "3", "9"));
     }
 
     public List getExercicio1() {
