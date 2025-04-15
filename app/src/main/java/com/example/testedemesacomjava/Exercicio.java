@@ -451,11 +451,21 @@ public class Exercicio extends AppCompatActivity {
             limparCampos(respostasCondicionais.getExercicio1());
         } else if (tipoExercicio.equals("repeticao")) {
             //DEIXANDO OCULTO OS CAMPOS QUE NÃO SERÃO USADOS
-            legendaLinha6.setText("4");
-            legendaLinha7.setText("5");
-            legendaLinha8.setText("4");
-            legendaLinha9.setText("5");
-            legendaLinha10.setText("6");
+            //ocultando a linha 8
+            legendaLinha8.setVisibility(View.INVISIBLE);
+            campo22.setVisibility(View.INVISIBLE);
+            campo23.setVisibility(View.INVISIBLE);
+            campo24.setVisibility(View.INVISIBLE);
+            //ocultando a linha 9
+            legendaLinha9.setVisibility(View.INVISIBLE);
+            campo25.setVisibility(View.INVISIBLE);
+            campo26.setVisibility(View.INVISIBLE);
+            campo27.setVisibility(View.INVISIBLE);
+            //ocultando a linha 10
+            legendaLinha10.setVisibility(View.INVISIBLE);
+            campo28.setVisibility(View.INVISIBLE);
+            campo29.setVisibility(View.INVISIBLE);
+            campo30.setVisibility(View.INVISIBLE);
 
             imagemExercicio.setImageResource(R.drawable.estrutura_de_repeticao_exercicio1);
             bloqueaCampos(respostasEstruturaDeRepeticao.getExercicio1());
