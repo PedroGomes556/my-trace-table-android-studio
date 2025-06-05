@@ -38,13 +38,13 @@
 
     <string name="descricao_ajuda">
         Em cada tela de exercício, como a apresentada na figura abaixo, você verá um trecho de
-        código e deve preencher as caixas de texto em branco com os valores das variáveis durante a execução de cada uma das linhas também indicadas.
+        código e deve preencher as caixas de texto em branco com os valores das variáveis, utilizando números inteiros, durante a execução de cada uma das linhas também indicadas.
     </string>
     <string name="descricao_ajuda2">
         Em cada imagem terá os números das linhas que deverão ser analisadas, conforme imagem a seguir:
     </string>
     <string name="descricao_ajuda3">
-        No exemplo do exercício a seguir é possível notar o preenchimento da variável "A" na linha 1.
+        No exemplo do exercício a seguir é possível notar o preenchimento da variável "A" na linha 1. Em alguns exercícios terá mais linhas do que as que são possíveis mostrar na tela. Com isso se faz necessário deslizar os campos para visualizar todos.
     </string>
     <string name="descricao_ajuda4">
         \n\n Depois de preencher todos os campos aperte no botão "'VERIFICAR RESPOSTA'".

@@ -767,7 +767,7 @@
                     android:focusable="false"
                     android:fontFamily="@font/poppins"
                     android:padding="8dp"
-                    android:text="8"
+                    android:text="10"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textColorLink="#FFFFFF" />
